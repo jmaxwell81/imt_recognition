@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="m2m_sp_widget_dependency">
+    <m2m_sp_widget_dependency action="INSERT_OR_UPDATE">
+        <sp_dependency display_value="countUp.js">b6227a5d0fbb9f8062b6e64be1050ee2</sp_dependency>
+        <sp_widget display_value="Recognition Points">417196b413775bc01c7851522244b0c4</sp_widget>
+        <sys_class_name>m2m_sp_widget_dependency</sys_class_name>
+        <sys_created_by>rbeeman</sys_created_by>
+        <sys_created_on>2018-08-07 18:31:47</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>8642fe5d0fbb9f8062b6e64be1050e21</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>countUp.js.Recognition Points</sys_name>
+        <sys_package display_value="IMT Recognition" source="x_thimi_imt_rec">e93694ab0f279b8062b6e64be1050e59</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="IMT Recognition">e93694ab0f279b8062b6e64be1050e59</sys_scope>
+        <sys_update_name>m2m_sp_widget_dependency_8642fe5d0fbb9f8062b6e64be1050e21</sys_update_name>
+        <sys_updated_by>rbeeman</sys_updated_by>
+        <sys_updated_on>2018-08-07 18:31:47</sys_updated_on>
+    </m2m_sp_widget_dependency>
+</record_update>

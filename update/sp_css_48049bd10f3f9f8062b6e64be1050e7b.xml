@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sp_css">
+    <sp_css action="INSERT_OR_UPDATE">
+        <css>#sc_cat_item {&#13;
+	margin-top: 10px;&#13;
+}&#13;
+&#13;
+.sp-scroll {&#13;
+  overflow-y: overlay !important;&#13;
+}&#13;
+&#13;
+.cat_item_price {&#13;
+	display: none;&#13;
+}&#13;
+&#13;
+.navbar-toggle {&#13;
+  	background-color: transparent !important;&#13;
+	border-color: #81878e !important;&#13;
+  	//color: #81878e !important;&#13;
+}&#13;
+&#13;
+.icon-bar {&#13;
+	background-color: #81878e !important;&#13;
+}&#13;
+&#13;
+/*&#13;
+.panel-body {&#13;
+	display: none;&#13;
+}&#13;
+*/&#13;
+sp-attachment-button {&#13;
+	display: none;&#13;
+}&#13;
+</css>
+        <name>imt-recognition.css</name>
+        <sys_class_name>sp_css</sys_class_name>
+        <sys_created_by>rbeeman</sys_created_by>
+        <sys_created_on>2018-08-07 21:00:22</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>48049bd10f3f9f8062b6e64be1050e7b</sys_id>
+        <sys_mod_count>21</sys_mod_count>
+        <sys_name>imt-recognition.css</sys_name>
+        <sys_package display_value="IMT Recognition" source="x_thimi_imt_rec">e93694ab0f279b8062b6e64be1050e59</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="IMT Recognition">e93694ab0f279b8062b6e64be1050e59</sys_scope>
+        <sys_update_name>sp_css_48049bd10f3f9f8062b6e64be1050e7b</sys_update_name>
+        <sys_updated_by>rbeeman</sys_updated_by>
+        <sys_updated_on>2018-08-23 22:33:19</sys_updated_on>
+    </sp_css>
+</record_update>

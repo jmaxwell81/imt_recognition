@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <client_script><![CDATA[function($scope, $location) {
+	var c = this;
+	addItemsToCategories(c.data.categories, c.data.items);
+	function addItemsToCategories(cats, items) {
+		cats.forEach(function(cat) {
+			cat.items = [];
+			items.forEach(function (item) {
+				if (item.category != cat.sys_id)
+					return; 
+				
+				cat.items.push(item);
+			})
+		})
+	}
+	
+	
+	/*=============== Begin link handling ===============*/
+	$scope.onClick = function($event, item) {
+		var lp = getLinkParts(item);
+		if (typeof lp == "string")
+			return; // can't intercept/redirect external content item
+
+		$event.stopPropagation();
+		$event.preventDefault();
+		var evt = {item: item, search: lp};
+
+		// This will let a wrapper widget intercept and redirect somewhere else
+		$scope.$emit($scope.options.click_event_name, evt);
+	};
+
+	function getLinkParts(item) {
+		if (item.sys_class_name == 'sc_cat_item_content' && item.content_type == 'external')
+			return item.url;
+
+		return {id: item.page, sys_id: item.sys_id};
+	}
+
+	$scope.getItemHREF = function(item) {
+		var lp = getLinkParts(item);
+		if (typeof lp == "string")
+			return lp;
+
+		return "?id=" + lp.id + "&sys_id=" + lp.sys_id;
+	}
+
+	var unregister = $rootScope.$on($scope.options.click_event_name, function($event, o) {
+		if ("url" in o)
+			$location.href = o.url;
+		else
+			$location.search(o.search);
+	});
+
+	$scope.$on("$destroy", function() {
+		unregister();
+	});
+	/*=============== End link handling ===============*/
+	
+}]]></client_script>
+        <controller_as>c</controller_as>
+        <css>h3 {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs display_value="Catalog Content">04bdcb60d731120023c84f80de6103b3</docs>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id/>
+        <internal>false</internal>
+        <link/>
+        <name>Recognition Catalog Content</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+	var cat = $sp.getParameter('sc_catalog');
+	if (!cat)
+		cat = $sp.getValue("sc_catalog");  // portal catalog
+	var gr = new GlideRecord('sc_catalog', cat);
+	gr.get(cat);
+	data.cat = cat;
+	data.title = gr.getValue("title");
+	data.categories = getCategories(cat);
+	data.items = getItems(cat);
+	data.sc_category_page = $sp.getDisplayValue("sc_category_page") || "sc_category";
+
+	function getItems(cat) {
+		var gr = new GlideRecord('sc_cat_item');
+		gr.addQuery('sc_catalogs', cat);
+		gr.addActiveQuery();
+		gr.orderBy('name');
+		gr.query();
+		var items = [];
+		while (gr.next()) {
+			if (!$sp.canReadRecord("sc_cat_item", gr.getUniqueValue()))
+				continue;
+
+			var c = {};
+			$sp.getRecordValues(c,gr,'sys_id,name,short_description,category,sys_class_name,price');
+			$sp.getRecordDisplayValues(c, gr, 'icon');
+			c.page = 'rec_sc_cat_item';
+			if (c.sys_class_name == 'sc_cat_item_guide') 
+				c.page = 'sc_cat_item_guide';
+			items.push(c);
+		}
+		return items;
+	}
+
+	function getCategories(cat) {
+		var gr = new GlideRecord('sc_category');
+		gr.addQuery('sc_catalog', cat);
+		gr.addActiveQuery();
+		gr.orderBy('title');
+		gr.query();
+		var cats = [];
+		while (gr.next()) {
+			if (!$sp.canReadRecord("sc_category", gr.getUniqueValue()))
+				continue;
+
+			var c = {};
+			$sp.getRecordValues(c,gr,'sys_id,title,parent');
+			cats.push(c);
+		}
+		return cats;
+	}
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>isabellee</sys_created_by>
+        <sys_created_on>2018-08-07 20:17:28</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>9a7a4f1d0ffb9f8062b6e64be1050eb6</sys_id>
+        <sys_mod_count>85</sys_mod_count>
+        <sys_name>Recognition Catalog Content</sys_name>
+        <sys_package display_value="IMT Recognition" source="x_thimi_imt_rec">e93694ab0f279b8062b6e64be1050e59</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="IMT Recognition">e93694ab0f279b8062b6e64be1050e59</sys_scope>
+        <sys_update_name>sp_widget_9a7a4f1d0ffb9f8062b6e64be1050eb6</sys_update_name>
+        <sys_updated_by>rbeeman</sys_updated_by>
+        <sys_updated_on>2018-10-09 06:36:37</sys_updated_on>
+        <template><![CDATA[<h3>Select a prize:</h3>	
+<div ng-repeat="c in ::data.categories" ng-if="::c.items.length">
+  <!--<div class="h4"><a ng-href="?id={{::data.sc_category_page}}&sys_id={{::c.sys_id}}">{{::c.title}}</a></div>-->
+  <!--<div class="row">-->
+    <div class="col-sm-6 col-md-4" ng-repeat="item in ::c.items">
+      <div class="panel panel-{{::options.color}} b">
+        <a href="?id={{::item.page}}&sys_id={{::item.sys_id}}" ng-click="onClick($event, item)" class="panel-body block">
+          <div class="overflow-100">
+            <h4 class="m-t-none m-b-xs">{{::item.name}}</h4>
+            <img ng-src="{{::item.icon}}" ng-if="::item.icon" alt="{{::item.name}}" class="m-r-sm m-b-sm item-image pull-center" />
+            <div class="m-b-xs m-t-xl pull-right text-danger text-lg">{{::item.price}} pts</div>
+            <div class="text-muted item-short-desc">{{::item.short_description}}</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  <!--</div>-->
+<!--</div>-->]]></template>
+    </sp_widget>
+</record_update>

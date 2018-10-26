@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_email_layout">
+    <sys_email_layout action="INSERT_OR_UPDATE">
+        <advanced>true</advanced>
+        <advanced_layout><![CDATA[<style type="text/css">
+    .Content {
+        margin-top: 10px;
+        margin-right: 20px;
+        margin-bottom: 0px;
+        margin-left: 20px;
+        padding-top: 10px;
+        padding-right: 20px;
+        padding-bottom: 0px;
+        padding-left: 20px;
+        font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+        font-size: 14px;
+        line-height: normal;
+        font-weight: normal;
+        color: #666;
+    }
+
+    border-top-color: #F00;
+    }
+
+    a:link {
+        text-decoration: none;
+        color: #FF0004;
+    }
+
+    a:visited {
+        text-decoration: none;
+        color: #FF0004;
+    }
+
+    a:hover {
+        text-decoration: none;
+        color: #FF0000;
+    }
+
+    a:active {
+        text-decoration: none;
+        color: #FF0004;
+    }
+</style>
+
+<table width="650" border="0" cellspacing="0" cellpadding="0" align="center" bgcolor="#FFFFFF">
+    <tbody>
+        <tr>
+            <td colspan="2" align="center"><img src="/IMT-EmployeeRecognitionPoints-Header.jpg" alt="I&amp;MT Employee Recognition Points"/>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" style="font-family:Arial, Helvetica, sans-serif; font-size:16px; color:#848080; padding-left:30px; padding-right: 36px; text-align: left; line-height:24px">
+                ${notification:body}
+            </td>
+        </tr>
+
+
+        <tr>
+            <td colspan="2" align="center"><img src="/IMT-EmployeeRecognitionNotice-Footer.jpg"/>
+            </td>
+        </tr>
+
+
+    </tbody>
+</table>]]></advanced_layout>
+        <description/>
+        <layout/>
+        <name>I&amp;MT Prize Redeemed Header and Footer</name>
+        <sys_class_name>sys_email_layout</sys_class_name>
+        <sys_created_by>isabellee</sys_created_by>
+        <sys_created_on>2018-09-19 22:55:43</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>edda85930f24634062b6e64be1050e9f</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>I&amp;MT Prize Redeemed Header and Footer</sys_name>
+        <sys_package display_value="IMT Recognition" source="x_thimi_imt_rec">e93694ab0f279b8062b6e64be1050e59</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="IMT Recognition">e93694ab0f279b8062b6e64be1050e59</sys_scope>
+        <sys_update_name>sys_email_layout_edda85930f24634062b6e64be1050e9f</sys_update_name>
+        <sys_updated_by>isabellee</sys_updated_by>
+        <sys_updated_on>2018-09-19 23:02:26</sys_updated_on>
+    </sys_email_layout>
+</record_update>

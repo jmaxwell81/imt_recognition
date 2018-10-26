@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update sys_domain="global" table="sys_ui_module">
+    <sys_ui_module action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <application display_value="I&amp;MT Recognition">fd51ab7313ab97c01c7851522244b063</application>
+        <filter/>
+        <name>I&amp;MT Recognition Points</name>
+        <order/>
+        <path/>
+        <path_relative_to_root>false</path_relative_to_root>
+        <roles>x_thimi_imt_rec.imt_recognition_admin</roles>
+        <sys_class_name>sys_ui_module</sys_class_name>
+        <sys_created_by>rbeeman</sys_created_by>
+        <sys_created_on>2018-08-03 06:38:31</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_domain>global</sys_domain>
+        <sys_id>72a8af7713ab97c01c7851522244b06a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>I&amp;MT Recognition Points</sys_name>
+        <sys_package display_value="IMT Recognition" source="x_thimi_imt_rec">e93694ab0f279b8062b6e64be1050e59</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="IMT Recognition">e93694ab0f279b8062b6e64be1050e59</sys_scope>
+        <sys_update_name>sys_ui_module_72a8af7713ab97c01c7851522244b06a</sys_update_name>
+        <sys_updated_by>rbeeman</sys_updated_by>
+        <sys_updated_on>2018-08-03 06:38:31</sys_updated_on>
+        <table>x_thimi_imt_rec_imt_recognition</table>
+        <uncancelable>false</uncancelable>
+        <view_name/>
+    </sys_ui_module>
+</record_update>

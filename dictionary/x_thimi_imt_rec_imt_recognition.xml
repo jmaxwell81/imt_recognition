@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element audit="true" label="I&amp;MT Recognitions" max_length="40" name="x_thimi_imt_rec_imt_recognition" type="collection">
+        <element label="Department" max_length="32" name="department" reference="cmn_department" type="reference"/>
+        <element label="Description" max_length="4000" name="description" type="string"/>
+        <element label="Employee" max_length="32" name="employee" reference="sys_user" type="reference"/>
+        <element choice="1" label="Key Result" max_length="40" name="key_result" type="choice">
+            <choice>
+                <element label="Digital Trust" sequence="0" value="Digital Trust"/>
+                <element label="Efficiency" sequence="1" value="Efficiency"/>
+                <element label="Engagement" sequence="2" value="Engagement"/>
+                <element label="Innovation" sequence="3" value="Innovation"/>
+                <element label="Operations" sequence="4" value="Operations"/>
+                <element label="Service Delivery" sequence="5" value="Service Delivery"/>
+            </choice>
+        </element>
+        <element label="Nominator" max_length="32" name="nominator" reference="sys_user" type="reference"/>
+        <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" type="string"/>
+        <element label="Points" max_length="40" name="points" type="integer"/>
+        <element choice="1" label="Submission type" max_length="40" name="sub_type" type="string">
+            <choice>
+                <element label="Recognition" sequence="0" value="Recognition"/>
+                <element label="Participation" sequence="1" value="Participation"/>
+                <element label="Redemption" sequence="2" value="Redemption"/>
+            </choice>
+        </element>
+        <index name="index">
+            <element name="department"/>
+        </index>
+        <index name="index2">
+            <element name="employee"/>
+        </index>
+        <index name="index3">
+            <element name="nominator"/>
+        </index>
+    </element>
+</database>

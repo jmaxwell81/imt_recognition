@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sp_js_include">
+    <sp_js_include action="INSERT_OR_UPDATE">
+        <display_name>countUp.js</display_name>
+        <source>local</source>
+        <sys_class_name>sp_js_include</sys_class_name>
+        <sys_created_by>rbeeman</sys_created_by>
+        <sys_created_on>2018-08-07 18:36:40</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>8f53ba9d0fbb9f8062b6e64be1050e8e</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>countUp.js</sys_name>
+        <sys_package display_value="IMT Recognition" source="x_thimi_imt_rec">e93694ab0f279b8062b6e64be1050e59</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="IMT Recognition">e93694ab0f279b8062b6e64be1050e59</sys_scope>
+        <sys_ui_script display_value="x_thimi_imt_rec.countUp.js">9e52329d0fbb9f8062b6e64be1050eb9</sys_ui_script>
+        <sys_update_name>sp_js_include_8f53ba9d0fbb9f8062b6e64be1050e8e</sys_update_name>
+        <sys_updated_by>rbeeman</sys_updated_by>
+        <sys_updated_on>2018-08-07 18:42:54</sys_updated_on>
+        <url/>
+    </sp_js_include>
+</record_update>

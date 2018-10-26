@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sp_theme">
+    <sp_theme action="INSERT_OR_UPDATE">
+        <css_variables>$sp-logo-margin-x: 		15px !default;&#13;
+$sp-tagline-color:		$text-color !default;&#13;
+$navbar-inverse-bg: 	#3a3f51 !default;&#13;
+$navbar-inverse-link-color: #bdc0c4 !default;&#13;
+$navbar-inverse-link-hover-color: #ffffff !default;&#13;
+$body-bg: 				#f0f3f4 !default;&#13;
+$dropdown-link-disabled-color: #ccc;&#13;
+&#13;
+section.page {&#13;
+  display: flex;&#13;
+  flex-direction: column;&#13;
+  display: -ms-flexbox;&#13;
+  -ms-flex-direction: column;&#13;
+}&#13;
+ &#13;
+section.page &gt; main.body,&#13;
+section.page &gt; section.body {&#13;
+  flex-grow: 1;&#13;
+  flex-shrink: 0;&#13;
+  -ms-flex-positive: 1;&#13;
+}</css_variables>
+        <footer display_value="Recognition Footer">c2a40db70f23db8062b6e64be1050eda</footer>
+        <footer_fixed>false</footer_fixed>
+        <header display_value="Recognition Header">ac0ad8ca0ff313c062b6e64be1050e7a</header>
+        <name>Recognition</name>
+        <navbar_fixed>true</navbar_fixed>
+        <sys_class_name>sp_theme</sys_class_name>
+        <sys_created_by>rbeeman</sys_created_by>
+        <sys_created_on>2018-08-02 18:40:09</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>e41485b70f23db8062b6e64be1050e9d</sys_id>
+        <sys_mod_count>7</sys_mod_count>
+        <sys_name>Recognition</sys_name>
+        <sys_package display_value="IMT Recognition" source="x_thimi_imt_rec">e93694ab0f279b8062b6e64be1050e59</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="IMT Recognition">e93694ab0f279b8062b6e64be1050e59</sys_scope>
+        <sys_update_name>sp_theme_e41485b70f23db8062b6e64be1050e9d</sys_update_name>
+        <sys_updated_by>rbeeman</sys_updated_by>
+        <sys_updated_on>2018-08-09 15:40:42</sys_updated_on>
+    </sp_theme>
+</record_update>

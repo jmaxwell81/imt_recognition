@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sc_cat_item_catalog">
+    <sc_cat_item_catalog action="INSERT_OR_UPDATE">
+        <sc_cat_item display_value="VIP Parking for 1 Week">a230231d0f3f9f8062b6e64be1050e57</sc_cat_item>
+        <sc_catalog display_value="IMT Recognition Catalog">8679ad001373d7c01c7851522244b046</sc_catalog>
+        <sys_class_name>sc_cat_item_catalog</sys_class_name>
+        <sys_created_by>isabellee</sys_created_by>
+        <sys_created_on>2018-08-07 21:53:28</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>5070efd90f3f9f8062b6e64be1050e4f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>IMT Recognition Catalog.VIP Parking for 1 Week</sys_name>
+        <sys_package display_value="IMT Recognition" source="x_thimi_imt_rec">e93694ab0f279b8062b6e64be1050e59</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="IMT Recognition">e93694ab0f279b8062b6e64be1050e59</sys_scope>
+        <sys_update_name>sc_cat_item_catalog_5070efd90f3f9f8062b6e64be1050e4f</sys_update_name>
+        <sys_updated_by>isabellee</sys_updated_by>
+        <sys_updated_on>2018-08-07 21:53:28</sys_updated_on>
+    </sc_cat_item_catalog>
+</record_update>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <client_script/>
+        <controller_as>c</controller_as>
+        <css/>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list>color</field_list>
+        <has_preview>false</has_preview>
+        <id>rec-sc-cat-item</id>
+        <internal>false</internal>
+        <link/>
+        <name>Recognition Catalog Item</name>
+        <option_schema>[{"name":"show_add_cart_button","label":"Show Add Cart Button","type":"boolean"},{"hint":"Define a URL Format for successful order page","name":"url","label":"Custom URL Format","type":"string"},{"displayValue":"Page","name":"page","label":"Successful Order Page","type":"reference","value":"sp_page","ed":{"reference":"sp_page"}},{"displayValue":"Table","name":"table","label":"Successful Order Table","type":"reference","value":"sys_db_object","ed":{"reference":"sys_db_object"}},{"hint":"Enable auto-redirection after ordering an item","name":"auto_redirect","label":"Auto Redirect on Successful Order","type":"boolean"}]</option_schema>
+        <public>false</public>
+        <roles>snc_external,snc_internal</roles>
+        <script><![CDATA[data.sc_catalog = $sp.getValue('sc_catalogs') || $sp.getValue('sc_catalog');
+var items = [];
+
+var count = new GlideAggregate('sc_req_item');
+count.addAggregate('COUNT','cat_item');
+count.groupBy('cat_item');
+count.addQuery('cat_item.sc_catalogs', 'IN', data.sc_catalog);
+count.orderByAggregate('COUNT', 'cat_item');
+count.query();
+while (count.next()) {
+	if (!$sp.canReadRecord("sc_cat_item", count.cat_item.sys_id.getDisplayValue()))
+		continue;
+	
+	var item = {};
+	item.count = count.getAggregate('COUNT', 'cat_item');
+	item.name = count.cat_item.name.getDisplayValue();
+	item.picture = count.cat_item.picture.getDisplayValue();
+	item.short_description = count.cat_item.short_description.getDisplayValue();
+	item.sys_id = count.cat_item.sys_id.getDisplayValue();
+	items.push(item);
+}
+
+data.items = items;]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>isabellee</sys_created_by>
+        <sys_created_on>2018-08-07 16:29:42</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>3556dad50f7b9f8062b6e64be1050e2c</sys_id>
+        <sys_mod_count>28</sys_mod_count>
+        <sys_name>Recognition Catalog Item</sys_name>
+        <sys_package display_value="IMT Recognition" source="x_thimi_imt_rec">e93694ab0f279b8062b6e64be1050e59</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="IMT Recognition">e93694ab0f279b8062b6e64be1050e59</sys_scope>
+        <sys_update_name>sp_widget_3556dad50f7b9f8062b6e64be1050e2c</sys_update_name>
+        <sys_updated_by>isabellee</sys_updated_by>
+        <sys_updated_on>2018-08-07 19:40:28</sys_updated_on>
+        <template><![CDATA[<h1 class="font-thin m-t-none">{{::options.title}}</h1>
+
+<div class="row">
+    <div class="col-sm-6 col-md-4" ng-repeat="item in data.items">
+        <div class="panel panel-default">
+            <a href="?id=sc_cat_item&sys_id={{item.sys_id}}" class="panel-body block">
+                <div class="overflow-100">
+                    <h2 class="h4 m-t-none m-b-xs">{{::item.name}}</h2>
+                    <img ng-src="{{item.picture}}" ng-if="::item.picture" class="m-r-sm m-b-sm item-image pull-left" alt="{{::item.name}}" role="presentation" />
+                    <div class="text-muted item-short-desc">{{::item.short_description}}</div>
+                </div>
+            </a>
+
+        </div>
+    </div>
+</div>]]></template>
+    </sp_widget>
+</record_update>

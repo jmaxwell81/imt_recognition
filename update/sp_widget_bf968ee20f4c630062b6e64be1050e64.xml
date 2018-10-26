@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <client_script><![CDATA[function($scope) {
+
+	/* widget controller */
+	var c = this;
+
+	c.sortType = 'date';
+	c.sortReverse = true;
+
+	c.sort = function(field) {
+		if (c.sortType == field) {
+			c.sortReverse = !c.sortReverse;
+		}	else {
+			c.sortType = field;
+			c.sortReverse = true;
+		}
+	};
+
+	c.search = '';
+
+}]]></client_script>
+        <controller_as>c</controller_as>
+        <css>section.flex-grow.page.sp-scroll {&#13;
+    overflow-y: scroll;&#13;
+}&#13;
+&#13;
+table.main-table {&#13;
+  	font-size: 14px;&#13;
+  	margin-top: 20px;&#13;
+    border-collapse: collapse;&#13;
+    width: 100%;&#13;
+}&#13;
+&#13;
+.small-row {&#13;
+	width: 12.5%;&#13;
+}&#13;
+&#13;
+.medium-row {&#13;
+	width: 25%;&#13;
+}&#13;
+&#13;
+.large-row {&#13;
+	width: 50%;&#13;
+}&#13;
+&#13;
+th.main-table, td.main-table {&#13;
+    padding: 25px;&#13;
+    text-align: left;&#13;
+  	vertical-align: top;&#13;
+}&#13;
+&#13;
+td.main-table {&#13;
+    border-top: 1px solid #ddd;&#13;
+}&#13;
+&#13;
+.avatar-container {&#13;
+	margin-right: 15px;&#13;
+}&#13;
+&#13;
+input {&#13;
+  width: 250px;&#13;
+  padding: 5px;&#13;
+  margin-top: 5px;&#13;
+  border-style: solid;&#13;
+  border-width: 1px;&#13;
+  border-radius: 4px;&#13;
+  border-color: rgb(189, 192, 196);&#13;
+}&#13;
+&#13;
+::placeholder {&#13;
+    color: lightgray;&#13;
+    opacity: 1; /* Firefox */&#13;
+}&#13;
+&#13;
+:-ms-input-placeholder { /* Internet Explorer 10-11 */&#13;
+   color: lightgray;&#13;
+}&#13;
+&#13;
+::-ms-input-placeholder { /* Microsoft Edge */&#13;
+   color: lightgray;&#13;
+}&#13;
+&#13;
+.pagination&gt;li.active&gt;a {&#13;
+  background: #d9534f;&#13;
+  border-color: #d9534f;&#13;
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id/>
+        <internal>false</internal>
+        <link/>
+        <name>Recognition My Prizes</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+	/* populate the 'data' object */
+	/* e.g., data.table = $sp.getValue('table'); */
+
+	data.myRecs = [];
+
+	var recs = new GlideRecord('x_thimi_imt_rec_imt_recognition');
+	recs.addQuery('employee', gs.getUserID());
+	recs.addQuery('sub_type', 'Redemption');
+	recs.query();
+	while (recs.next()) {
+		var dateMS = new GlideDateTime(recs.sys_created_on).getNumericValue(),
+				date = getDate(dateMS);
+		
+		var myRec = {
+			number: recs.number.toString(),
+			empName: recs.employee.name.toString(),
+			empDept: recs.employee.department.getDisplayValue(),
+			empId: recs.employee.sys_id.toString(),
+			prize: recs.description.toString(),
+			date: date,
+			searchDate: date.toLocaleDateString()
+		};
+		data.myRecs.push(myRec);
+	}
+	
+	function getDate(dateStr) {
+		return new Date(dateStr);
+	}
+
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>rbeeman</sys_created_by>
+        <sys_created_on>2018-08-23 22:49:07</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>bf968ee20f4c630062b6e64be1050e64</sys_id>
+        <sys_mod_count>7</sys_mod_count>
+        <sys_name>Recognition My Prizes</sys_name>
+        <sys_package display_value="IMT Recognition" source="x_thimi_imt_rec">e93694ab0f279b8062b6e64be1050e59</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="IMT Recognition">e93694ab0f279b8062b6e64be1050e59</sys_scope>
+        <sys_update_name>sp_widget_bf968ee20f4c630062b6e64be1050e64</sys_update_name>
+        <sys_updated_by>rbeeman</sys_updated_by>
+        <sys_updated_on>2018-08-23 23:19:48</sys_updated_on>
+        <template><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<div>
+  <h1>
+    <strong>My Prizes</strong>
+  </h1>
+
+  <input id='search' name='search' type='text' ng-model='c.search' placeholder="Search" class='pull-right hidden-xs' autocomplete="off">
+
+  <table class="main-table" ng-init="pageSize = 5">
+    <tr>
+      <th class="medium-row hidden-xs main-table" ng-click="c.sort('empName')">Employee <span ng-show="c.sortType == 'empName' && c.sortReverse == true" class="fa fa-caret-down"></span><span ng-show="c.sortType == 'empName' && c.sortReverse == false" class="fa fa-caret-up"></span>
+      </th>
+      <th class="large-row hidden-xs main-table" ng-click="c.sort('prize')">Prize <span ng-show="c.sortType == 'prize' && c.sortReverse == true" class="fa fa-caret-down"></span><span ng-show="c.sortType == 'prize' && c.sortReverse == false" class="fa fa-caret-up"></span>
+      </th>
+      <th class="small-row hidden-xs main-table" ng-click="c.sort('date')">Date <span ng-show="c.sortType == 'date' && c.sortReverse == true" class="fa fa-caret-down"></span><span ng-show="c.sortType == 'date' && c.sortReverse == false" class="fa fa-caret-up"></span>
+      </th>
+    </tr>
+    <tr dir-paginate="rec in c.data.myRecs | orderBy:c.sortType:c.sortReverse | filter:c.search | itemsPerPage: pageSize">
+      <td class="medium-row main-table">
+        <table>
+          <tr>
+            <td><span class="hidden-xs"><sn-avatar class="avatar-small-medium" primary="rec.empId" /></span></td>
+            <td><span class="text-primary">{{ rec.empName }}</span><br><span class="hidden-xs">{{ rec.empDept }}</span></td>
+          </tr>
+        </table>
+        </td>
+      <td class="large-row main-table">{{ rec.prize }}</td>
+      <td class="small-row hidden-xs main-table">{{ rec.date | date : "MMMM d, y" }}</td>
+    </tr>
+  </table>
+  <div class="text-center">
+    <dir-pagination-controls></dir-pagination-controls>  
+  </div>
+</div>]]></template>
+    </sp_widget>
+</record_update>

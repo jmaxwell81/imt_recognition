@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update sys_domain="global" table="sysevent_email_action">
+    <sysevent_email_action action="INSERT_OR_UPDATE">
+        <action_insert>true</action_insert>
+        <action_update>false</action_update>
+        <active>true</active>
+        <advanced_condition/>
+        <affected_field_on_event/>
+        <category display_value="Uncategorized" name="Uncategorized">c97d83137f4432005f58108c3ffa917a</category>
+        <collection>x_thimi_imt_rec_imt_recognition</collection>
+        <condition table="x_thimi_imt_rec_imt_recognition">sub_type=Redemption^EQ<item endquery="false" field="sub_type" goto="false" newquery="false" operator="=" or="false" value="Redemption"/>
+            <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
+        </condition>
+        <content_type>text/html</content_type>
+        <description/>
+        <event_name>Airwatch.droidnotice</event_name>
+        <event_parm_1>false</event_parm_1>
+        <event_parm_2>false</event_parm_2>
+        <exclude_delegates>false</exclude_delegates>
+        <force_delivery>false</force_delivery>
+        <from/>
+        <generation_type>engine</generation_type>
+        <group/>
+        <group_field/>
+        <importance/>
+        <include_attachments>false</include_attachments>
+        <item>event.parm1</item>
+        <item_table/>
+        <list/>
+        <list_field/>
+        <mandatory>false</mandatory>
+        <message/>
+        <message_html><![CDATA[<p>Hi ${employee.first_name},<br /> <br /> Congratulations!! You have redeemed the following employee recognition prize: <br /> <br /><span style="font-size: 21px; color: #cc222a;"><strong>${description}</strong></span> <br /><br /> We hope you enjoy your reward!</p>]]></message_html>
+        <message_list/>
+        <message_text/>
+        <name>I&amp;MT Prize Redeemed Notification</name>
+        <omit_watermark>false</omit_watermark>
+        <order/>
+        <push_message_only>false</push_message_only>
+        <recipient_fields>employee</recipient_fields>
+        <recipient_groups/>
+        <recipient_users/>
+        <reply_to/>
+        <send_self>true</send_self>
+        <sms_alternate/>
+        <style/>
+        <subject>Congrats!</subject>
+        <subscribable>false</subscribable>
+        <sys_class_name>sysevent_email_action</sys_class_name>
+        <sys_created_by>isabellee</sys_created_by>
+        <sys_created_on>2018-09-19 23:12:44</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_domain>global</sys_domain>
+        <sys_id>bf4e4d170f24634062b6e64be1050e01</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>I&amp;MT Prize Redeemed Notification</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="IMT Recognition" source="x_thimi_imt_rec">e93694ab0f279b8062b6e64be1050e59</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="IMT Recognition">e93694ab0f279b8062b6e64be1050e59</sys_scope>
+        <sys_update_name>sysevent_email_action_bf4e4d170f24634062b6e64be1050e01</sys_update_name>
+        <sys_updated_by>isabellee</sys_updated_by>
+        <sys_updated_on>2018-09-19 23:20:54</sys_updated_on>
+        <sys_version>2</sys_version>
+        <template display_value="I&amp;MT Prize Redeemed Notification">a8cc49d30f24634062b6e64be1050e4b</template>
+        <type>email</type>
+        <u_notes/>
+        <user/>
+        <user_field/>
+        <weight>0</weight>
+    </sysevent_email_action>
+</record_update>
