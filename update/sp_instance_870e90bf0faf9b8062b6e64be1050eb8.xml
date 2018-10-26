@@ -4,7 +4,14 @@
         <active>true</active>
         <class_name/>
         <color>default</color>
-        <css/>
+        <css>p {
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+h4 {
+	margin-top: 25px;
+}</css>
         <glyph/>
         <id/>
         <order>0</order>
@@ -18,7 +25,7 @@
         <sys_created_on>2018-08-02 15:53:14</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>870e90bf0faf9b8062b6e64be1050eb8</sys_id>
-        <sys_mod_count>6</sys_mod_count>
+        <sys_mod_count>35</sys_mod_count>
         <sys_name>Welcome</sys_name>
         <sys_package display_value="IMT Recognition" source="x_thimi_imt_rec">e93694ab0f279b8062b6e64be1050e59</sys_package>
         <sys_policy/>
@@ -26,13 +33,13 @@
         <sys_scope display_value="IMT Recognition">e93694ab0f279b8062b6e64be1050e59</sys_scope>
         <sys_update_name>sp_instance_870e90bf0faf9b8062b6e64be1050eb8</sys_update_name>
         <sys_updated_by>rbeeman</sys_updated_by>
-        <sys_updated_on>2018-08-09 22:43:27</sys_updated_on>
+        <sys_updated_on>2018-10-26 18:19:36</sys_updated_on>
         <title>Welcome</title>
         <url/>
         <widget_parameters><![CDATA[{
 	"html": {
-		"value": "<h1><strong>Send a Recognition</strong></h1>\n<p><strong><img style=\"max-width: 100%; max-height: 480px;\" src=\"af5d7d860f3b13c062b6e64be1050e13.iix\" /></strong></p>\n<p><strong>Employee appreciation is vital to an outstanding workplace.</strong> The recognition form offers an easy way to show your appreciation to a team member that has exceeded expectations. Recognitions will be sent directly to the employee's manager and be displayed in the <a href=\"?id=rec_list\">Recent Recognition</a> board. Nominees will also receive points which can be redeemed for various experiences and prizes.</p>\n<h2>Recognition Point Values</h2>\n<ul>\n<li class=\"points\">Nominees receive 5 Points</li>\n<li class=\"points\">Nominators receive 1 Point</li>\n</ul>",
-		"displayValue": "<h1><strong>Send a Recognition</strong></h1>\n<p><strong><img style=\"max-width: 100%; max-height: 480px;\" src=\"af5d7d860f3b13c062b6e64be1050e13.iix\" /></strong></p>\n<p><strong>Employee appreciation is vital to an outstanding workplace.</strong> The recognition form offers an easy way to show your appreciation to a team member that has exceeded expectations. Recognitions will be sent directly to the employee's manager and be displayed in the <a href=\"?id=rec_list\">Recent Recognition</a> board. Nominees will also receive points which can be redeemed for various experiences and prizes.</p>\n<h2>Recognition Point Values</h2>\n<ul>\n<li class=\"points\">Nominees receive 5 Points</li>\n<li class=\"points\">Nominators receive 1 Point</li>\n</ul>"
+		"value": "<h1><strong>Send a Recognition</strong></h1>\n<p>Easily show your appreciation to a team member by sending a virtual high five through our recognition platform. Tell us why the employee has exceeded&nbsp;expectations&nbsp;and how their efforts align with an I&amp;MT&nbsp;key result. Your recognition will be sent directly to the employee&nbsp;and their&nbsp;manager and displayed in the Recognition Board.</p>\n<h4><strong>Redeem Recognitions for Points</strong></h4>\n<p>Both nominator and nominee will receive points which can be redeemed for various experiences and prizes.</p>\n<ul>\n<li class=\"points\">Nominees receive 5 Points</li>\n<li class=\"points\">Nominators receive 1 Point</li>\n</ul>",
+		"displayValue": "<h1><strong>Send a Recognition</strong></h1>\n<p>Easily show your appreciation to a team member by sending a virtual high five through our recognition platform. Tell us why the employee has exceeded&nbsp;expectations&nbsp;and how their efforts align with an I&amp;MT&nbsp;key result. Your recognition will be sent directly to the employee&nbsp;and their&nbsp;manager and displayed in the Recognition Board.</p>\n<h4><strong>Redeem Recognitions for Points</strong></h4>\n<p>Both nominator and nominee will receive points which can be redeemed for various experiences and prizes.</p>\n<ul>\n<li class=\"points\">Nominees receive 5 Points</li>\n<li class=\"points\">Nominators receive 1 Point</li>\n</ul>"
 	}
 }]]></widget_parameters>
     </sp_instance>

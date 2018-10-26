@@ -1,17 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <record_update table="sp_header_footer">
     <sp_header_footer action="INSERT_OR_UPDATE">
-        <client_script><![CDATA[function() {
-  /* widget controller */
-  var c = this;
+        <client_script><![CDATA[function($uibModal, $scope) {
+	var c = this;
+ 
+	c.openModal = function() {
+		c.modalInstance = $uibModal.open({
+			templateUrl: 'modalTemplate',
+			scope: $scope
+		});
+	}
+ 
+	c.closeModal = function() {
+		c.modalInstance.close();
+	}
+ 
 }]]></client_script>
         <controller_as>c</controller_as>
         <css>.recognition-footer {&#13;
-  background-color: darkgray;&#13;
+  background-color: $sp-navbar-divider-color;&#13;
   color: white;&#13;
   height: 50px;&#13;
   padding: 5px;&#13;
-}</css>
+}&#13;
+a {&#13;
+  	color: white;&#13;
+    padding-top: 10px;&#13;
+  	padding-right: 30px;&#13;
+  	text-align: center;&#13;
+  	text-decoration: none;&#13;
+}&#13;
+&#13;
+a:hover {&#13;
+    color: $brand-primary;&#13;
+  	text-decoration: none;&#13;
+}&#13;
+&#13;
+</css>
         <data_table>sp_instance</data_table>
         <demo_data/>
         <description/>
@@ -36,17 +61,38 @@
         <sys_created_on>2018-08-02 18:43:15</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>c2a40db70f23db8062b6e64be1050eda</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_mod_count>53</sys_mod_count>
         <sys_name>Recognition Footer</sys_name>
         <sys_package display_value="IMT Recognition" source="x_thimi_imt_rec">e93694ab0f279b8062b6e64be1050e59</sys_package>
         <sys_policy/>
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="IMT Recognition">e93694ab0f279b8062b6e64be1050e59</sys_scope>
         <sys_update_name>sp_header_footer_c2a40db70f23db8062b6e64be1050eda</sys_update_name>
-        <sys_updated_by>rbeeman</sys_updated_by>
-        <sys_updated_on>2018-08-02 18:48:09</sys_updated_on>
+        <sys_updated_by>isabellee</sys_updated_by>
+        <sys_updated_on>2018-10-26 17:41:43</sys_updated_on>
         <template><![CDATA[<div class='recognition-footer'>
+  <a button type="button" class="btn btn-link pull-right" ng-click="c.openModal()">${Terms and Conditions}</a>
+</div>
 
-</div>]]></template>
+<script type="text/ng-template" id="modalTemplate">
+<style>
+  .lang {
+      font-size: 15px;
+      line-height: 1.4;
+      padding: 25px;
+  }
+</style>
+  <div class="panel panel-default">
+      <div class="panel-heading">
+          <h4 class="panel-title ">Terms & Conditions</h4>
+      </div>
+      <div class="panel-body">
+          <p class="lang">Irvine Company is not responsible for any lost, damaged or expired reward redemptions. Points are revoked upon employee resignation or termination. Program not available for Irvine Company contractors or employees outsite the I&MT department. Irvine Company has the right to void redemtions at any time. Platform can be discontinued at any time.</p>
+      </div>
+      <div class="panel-footer text-right">
+          <button class="btn btn-primary" ng-click="c.closeModal()">${Okay}</button>
+      </div>
+  </div>
+</script>]]></template>
     </sp_header_footer>
 </record_update>

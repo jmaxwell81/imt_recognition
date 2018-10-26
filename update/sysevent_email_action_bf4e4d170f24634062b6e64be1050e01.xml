@@ -30,7 +30,9 @@
         <list_field/>
         <mandatory>false</mandatory>
         <message/>
-        <message_html><![CDATA[<p>Hi ${employee.first_name},<br /> <br /> Congratulations!! You have redeemed the following employee recognition prize: <br /> <br /><span style="font-size: 21px; color: #cc222a;"><strong>${description}</strong></span> <br /><br /> We hope you enjoy your reward!</p>]]></message_html>
+        <message_html><![CDATA[<p>Hi ${employee.first_name},</p>
+<p><br /> Congratulations!! You have redeemed the following employee recognition prize: <br /> <br /><span style="font-size: 21px; color: #cc222a;"><strong>${description}</strong></span> <br /><br /> We hope you enjoy your reward!</p>
+<p>${mail_script:Prize Redeem - Notify Manager}</p>]]></message_html>
         <message_list/>
         <message_text/>
         <name>I&amp;MT Prize Redeemed Notification</name>
@@ -39,12 +41,12 @@
         <push_message_only>false</push_message_only>
         <recipient_fields>employee</recipient_fields>
         <recipient_groups/>
-        <recipient_users/>
+        <recipient_users>3b562f9fdb176a00ad24f12aaf96199d</recipient_users>
         <reply_to/>
         <send_self>true</send_self>
         <sms_alternate/>
         <style/>
-        <subject>Congrats!</subject>
+        <subject>A Redemption Has Been Submitted</subject>
         <subscribable>false</subscribable>
         <sys_class_name>sysevent_email_action</sys_class_name>
         <sys_created_by>isabellee</sys_created_by>
@@ -52,7 +54,7 @@
         <sys_customer_update>false</sys_customer_update>
         <sys_domain>global</sys_domain>
         <sys_id>bf4e4d170f24634062b6e64be1050e01</sys_id>
-        <sys_mod_count>3</sys_mod_count>
+        <sys_mod_count>9</sys_mod_count>
         <sys_name>I&amp;MT Prize Redeemed Notification</sys_name>
         <sys_overrides/>
         <sys_package display_value="IMT Recognition" source="x_thimi_imt_rec">e93694ab0f279b8062b6e64be1050e59</sys_package>
@@ -61,7 +63,7 @@
         <sys_scope display_value="IMT Recognition">e93694ab0f279b8062b6e64be1050e59</sys_scope>
         <sys_update_name>sysevent_email_action_bf4e4d170f24634062b6e64be1050e01</sys_update_name>
         <sys_updated_by>isabellee</sys_updated_by>
-        <sys_updated_on>2018-09-19 23:20:54</sys_updated_on>
+        <sys_updated_on>2018-10-26 21:46:29</sys_updated_on>
         <sys_version>2</sys_version>
         <template display_value="I&amp;MT Prize Redeemed Notification">a8cc49d30f24634062b6e64be1050e4b</template>
         <type>email</type>

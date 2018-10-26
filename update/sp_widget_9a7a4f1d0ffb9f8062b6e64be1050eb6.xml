@@ -93,7 +93,7 @@
 		var gr = new GlideRecord('sc_cat_item');
 		gr.addQuery('sc_catalogs', cat);
 		gr.addActiveQuery();
-		gr.orderBy('name');
+		gr.orderBy('price');
 		gr.query();
 		var items = [];
 		while (gr.next()) {
@@ -135,7 +135,7 @@
         <sys_created_on>2018-08-07 20:17:28</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>9a7a4f1d0ffb9f8062b6e64be1050eb6</sys_id>
-        <sys_mod_count>85</sys_mod_count>
+        <sys_mod_count>88</sys_mod_count>
         <sys_name>Recognition Catalog Content</sys_name>
         <sys_package display_value="IMT Recognition" source="x_thimi_imt_rec">e93694ab0f279b8062b6e64be1050e59</sys_package>
         <sys_policy/>
@@ -143,8 +143,10 @@
         <sys_scope display_value="IMT Recognition">e93694ab0f279b8062b6e64be1050e59</sys_scope>
         <sys_update_name>sp_widget_9a7a4f1d0ffb9f8062b6e64be1050eb6</sys_update_name>
         <sys_updated_by>rbeeman</sys_updated_by>
-        <sys_updated_on>2018-10-09 06:36:37</sys_updated_on>
-        <template><![CDATA[<h3>Select a prize:</h3>	
+        <sys_updated_on>2018-10-26 17:16:52</sys_updated_on>
+        <template><![CDATA[<p>Prizes can be redeemed at anytime and will be purchased and awarded at the end of each month. To encourage redemption, employees can hold up to a maximum of 50 points.
+</p>
+<h3>Select a prize:</h3>	
 <div ng-repeat="c in ::data.categories" ng-if="::c.items.length">
   <!--<div class="h4"><a ng-href="?id={{::data.sc_category_page}}&sys_id={{::c.sys_id}}">{{::c.title}}</a></div>-->
   <!--<div class="row">-->
@@ -154,7 +156,7 @@
           <div class="overflow-100">
             <h4 class="m-t-none m-b-xs">{{::item.name}}</h4>
             <img ng-src="{{::item.icon}}" ng-if="::item.icon" alt="{{::item.name}}" class="m-r-sm m-b-sm item-image pull-center" />
-            <div class="m-b-xs m-t-xl pull-right text-danger text-lg">{{::item.price}} pts</div>
+            <div class="m-b-xs m-t-xl pull-right text-primary text-lg">{{::item.price}} pts</div>
             <div class="text-muted item-short-desc">{{::item.short_description}}</div>
           </div>
         </a>

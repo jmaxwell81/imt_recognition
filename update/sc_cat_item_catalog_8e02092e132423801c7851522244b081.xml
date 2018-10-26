@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <record_update table="sc_cat_item_catalog">
     <sc_cat_item_catalog action="INSERT_OR_UPDATE">
-        <sc_cat_item display_value="Name a huddle room after you for one year">0202092e132423801c7851522244b07f</sc_cat_item>
+        <sc_cat_item display_value="2-hour Early Departure / Late Arrival">0202092e132423801c7851522244b07f</sc_cat_item>
         <sc_catalog display_value="IMT Recognition Catalog">8679ad001373d7c01c7851522244b046</sc_catalog>
         <sys_class_name>sc_cat_item_catalog</sys_class_name>
         <sys_created_by>rbeeman</sys_created_by>

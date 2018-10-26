@@ -36,7 +36,7 @@
 <p><strong>Message:</strong> ${description}</p>
 <p><strong>Key Result:</strong> ${key_result}</p>
 <p><strong>Nominator's Manager:</strong> ${nominator.manager.name}</p>
-<p style="line-height: 16px;"><span style="font-size: 13px;">You have received <strong>5 points</strong> with this recognition. To view and/or redeem your points for prizes, please ${mail_script:IMT Recognition Redemption Link}. Once again, congratulations!</span></p>]]></message_html>
+<p style="line-height: 16px;"><span style="font-size: 13px;">You've earned points! Redeem at the IMT Recognition Portal ${mail_script:IMT Recognition Redemption Link}.</span></p>]]></message_html>
         <message_list/>
         <message_text/>
         <name>I&amp;MT Recognition Received</name>
@@ -50,7 +50,7 @@
         <send_self>true</send_self>
         <sms_alternate/>
         <style/>
-        <subject>You have received peer recognition!</subject>
+        <subject>A Recognition Has Been Submitted</subject>
         <subscribable>false</subscribable>
         <sys_class_name>sysevent_email_action</sys_class_name>
         <sys_created_by>rbeeman</sys_created_by>
@@ -58,7 +58,7 @@
         <sys_customer_update>false</sys_customer_update>
         <sys_domain>global</sys_domain>
         <sys_id>1424fc9f13e0e3801c7851522244b067</sys_id>
-        <sys_mod_count>9</sys_mod_count>
+        <sys_mod_count>12</sys_mod_count>
         <sys_name>I&amp;MT Recognition Received</sys_name>
         <sys_overrides/>
         <sys_package display_value="IMT Recognition" source="x_thimi_imt_rec">e93694ab0f279b8062b6e64be1050e59</sys_package>
@@ -66,8 +66,8 @@
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="IMT Recognition">e93694ab0f279b8062b6e64be1050e59</sys_scope>
         <sys_update_name>sysevent_email_action_1424fc9f13e0e3801c7851522244b067</sys_update_name>
-        <sys_updated_by>rbeeman</sys_updated_by>
-        <sys_updated_on>2018-09-19 23:30:05</sys_updated_on>
+        <sys_updated_by>isabellee</sys_updated_by>
+        <sys_updated_on>2018-10-26 21:40:31</sys_updated_on>
         <sys_version>2</sys_version>
         <template display_value="I&amp;MT Recognition Received Notification">b9f33c9f13e0e3801c7851522244b08c</template>
         <type>email</type>

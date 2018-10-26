@@ -11,8 +11,9 @@
         <delivery_plan/>
         <delivery_plan_script/>
         <delivery_time>1970-01-03 00:00:00</delivery_time>
-        <description><![CDATA[<p>Enjoy front row reserved parking for an entire week!&nbsp;</p>
-<p class="text-danger">2 pts</p>]]></description>
+        <description><![CDATA[<p><span style="font-size: 16px; font-weight: 400;">Roll into work like a Superstar with front row VIP parking for one week.</span></p>
+<p class="text-primary"><span style="font-size: 20px;">3 pts</span></p>
+<p><span style="font-size: 14px; font-weight: 200;"><em>Parking is located outside the 101 Innovation Building. After redemption, the&nbsp;Team Advocates will contact you to schedule your VIP Parking week.</em></span></p>]]></description>
         <entitlement_script/>
         <group/>
         <icon/>
@@ -25,7 +26,7 @@
         <mobile_picture/>
         <mobile_picture_type>use_desktop_picture</mobile_picture_type>
         <model/>
-        <name>VIP Parking for 1 Week</name>
+        <name>VIP Parking</name>
         <no_cart>true</no_cart>
         <no_order>false</no_order>
         <no_order_now>false</no_order_now>
@@ -33,11 +34,11 @@
         <no_quantity>true</no_quantity>
         <no_search>false</no_search>
         <omit_price>false</omit_price>
-        <order>0</order>
+        <order>1</order>
         <ordered_item_link/>
         <picture/>
         <preview>JavaScript: popupOpenStandard("com.glideapp.servicecatalog_cat_item_view.do?v=1&amp;sysparm_id=a230231d0f3f9f8062b6e64be1050e57&amp;sysparm_preview=true", "summary");</preview>
-        <price>2</price>
+        <price>3</price>
         <recurring_frequency/>
         <recurring_price>0</recurring_price>
         <redirect_url>generated_record</redirect_url>
@@ -88,15 +89,15 @@
         <sys_created_on>2018-08-07 21:52:55</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>a230231d0f3f9f8062b6e64be1050e57</sys_id>
-        <sys_mod_count>12</sys_mod_count>
-        <sys_name>VIP Parking for 1 Week</sys_name>
+        <sys_mod_count>24</sys_mod_count>
+        <sys_name>VIP Parking</sys_name>
         <sys_package display_value="IMT Recognition" source="x_thimi_imt_rec">e93694ab0f279b8062b6e64be1050e59</sys_package>
         <sys_policy/>
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="IMT Recognition">e93694ab0f279b8062b6e64be1050e59</sys_scope>
         <sys_update_name>sc_cat_item_producer_a230231d0f3f9f8062b6e64be1050e57</sys_update_name>
-        <sys_updated_by>rbeeman</sys_updated_by>
-        <sys_updated_on>2018-08-24 15:47:48</sys_updated_on>
+        <sys_updated_by>isabellee</sys_updated_by>
+        <sys_updated_on>2018-10-26 20:20:36</sys_updated_on>
         <table_name>x_thimi_imt_rec_imt_recognition</table_name>
         <template/>
         <type>item</type>
@@ -115,19 +116,19 @@
     <sys_translated_text action="delete_multiple" query="documentkey=a230231d0f3f9f8062b6e64be1050e57"/>
     <fx_price action="delete_multiple" query="id=a230231d0f3f9f8062b6e64be1050e57"/>
     <fx_price action="INSERT_OR_UPDATE">
-        <amount>2</amount>
+        <amount>3</amount>
         <currency display_value="USD">USD</currency>
         <field>price</field>
         <id>a230231d0f3f9f8062b6e64be1050e57</id>
         <parent/>
-        <reference_amount>2</reference_amount>
+        <reference_amount>3</reference_amount>
         <reference_currency display_value="USD">USD</reference_currency>
         <sys_created_by>isabellee</sys_created_by>
         <sys_created_on>2018-08-07 21:52:55</sys_created_on>
         <sys_id>a45067d90f3f9f8062b6e64be1050ed6</sys_id>
-        <sys_mod_count>1</sys_mod_count>
-        <sys_updated_by>rbeeman</sys_updated_by>
-        <sys_updated_on>2018-08-07 22:02:08</sys_updated_on>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_updated_by>isabellee</sys_updated_by>
+        <sys_updated_on>2018-10-26 16:15:44</sys_updated_on>
         <table>sc_cat_item_producer</table>
         <type>calculated</type>
     </fx_price>

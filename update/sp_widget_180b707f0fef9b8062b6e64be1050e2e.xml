@@ -98,7 +98,8 @@ button {&#13;
         <roles/>
         <script><![CDATA[(function() {
 	var nomineePts = 5,
-			nominatorPts = 1;
+			nominatorPts = 1,
+			maxPts = 50;
 
 	/* populate the 'data' object */
 	/* e.g., data.table = $sp.getValue('table'); */
@@ -133,34 +134,50 @@ button {&#13;
 	}
 
 	function createNomineeRecord() {
-		var empRec = new GlideRecord('x_thimi_imt_rec_imt_recognition');
+		var userId = input.userId,
+				points = getPtsToAdd(userId, nomineePts),
+				empRec = new GlideRecord('x_thimi_imt_rec_imt_recognition');
 		empRec.newRecord();
 		empRec.sub_type = 'Recognition';
 		empRec.nominator = gs.getUserID();
-		empRec.employee = input.userId;
+		empRec.employee = userId;
 		var userRec = new GlideRecord('sys_user');
-		if (userRec.get(input.userId)) {
+		if (userRec.get(userId)) {
 			empRec.department = userRec.department;
 		}
 		empRec.key_result = input.keyResult;
 		empRec.description = input.recognition;
-		empRec.points = nomineePts;
+		empRec.points = points;
 		empRec.insert();
 		return empRec;
 	}
 
 	function createNomatorRecord(number) {
-		var empRec = new GlideRecord('x_thimi_imt_rec_imt_recognition');
+		var userId = gs.getUserID(),
+				points = getPtsToAdd(userId, nominatorPts),
+				empRec = new GlideRecord('x_thimi_imt_rec_imt_recognition');
 		empRec.newRecord();
 		empRec.sub_type = 'Participation';
-		empRec.employee = gs.getUserID();
+		empRec.employee = userId;
 		var userRec = new GlideRecord('sys_user');
-		if (userRec.get(gs.getUserID())) {
+		if (userRec.get(userId)) {
 			empRec.department = userRec.department;
 		}		
 		empRec.description = number;
-		empRec.points = nominatorPts;
+		empRec.points = points;
 		empRec.insert();
+	}
+
+	function getPtsToAdd(userId, newPoints) {
+		var myPoints = 0,
+				recGr = new GlideRecord('x_thimi_imt_rec_imt_recognition');
+		recGr.addQuery('employee', userId);
+		recGr.query();
+		while (recGr.next()) {
+			myPoints += recGr.points;
+		}
+		var newTotal = myPoints + newPoints;
+		return (newTotal > maxPts) ? (maxPts - myPoints) : (newPoints);
 	}
 
 })();]]></script>
@@ -170,7 +187,7 @@ button {&#13;
         <sys_created_on>2018-08-02 17:59:46</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>180b707f0fef9b8062b6e64be1050e2e</sys_id>
-        <sys_mod_count>168</sys_mod_count>
+        <sys_mod_count>171</sys_mod_count>
         <sys_name>Recognition Form</sys_name>
         <sys_package display_value="IMT Recognition" source="x_thimi_imt_rec">e93694ab0f279b8062b6e64be1050e59</sys_package>
         <sys_policy/>
@@ -178,11 +195,11 @@ button {&#13;
         <sys_scope display_value="IMT Recognition">e93694ab0f279b8062b6e64be1050e59</sys_scope>
         <sys_update_name>sp_widget_180b707f0fef9b8062b6e64be1050e2e</sys_update_name>
         <sys_updated_by>rbeeman</sys_updated_by>
-        <sys_updated_on>2018-09-19 23:22:28</sys_updated_on>
+        <sys_updated_on>2018-10-26 20:09:07</sys_updated_on>
         <template><![CDATA[<div>
     <form name='giveRec' ng-submit="c.submitForm(giveRec.$valid)" ng-show="c.completed" novalidate>
         <label for='user' class="required">Select Employee</label>
-        <sn-record-picker id="user" name="user" field="user" table="'sys_user'" display-field="'name'" value-field="'sys_id'" search-fields="'name'" page-size="100" default-query="'sys_id!=' + c.data.recognizerId + '^active=true^u_lob=Corporate - IT'" required>
+        <sn-record-picker id="user" name="user" field="user" table="'sys_user'" display-field="'name'" value-field="'sys_id'" search-fields="'name'" page-size="100" default-query="'sys_id!=' + c.data.recognizerId + '^active=true^u_employee=true^u_lob=Corporate - IT'" required>
         </sn-record-picker>
         <label for='department'>Nominee's Department</label>
         <input id='department' name='department' type='text' ng-model='c.data.department' disabled><br>

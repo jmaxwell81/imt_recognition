@@ -5,14 +5,15 @@
         <availability>on_desktop</availability>
         <billable>false</billable>
         <can_cancel>false</can_cancel>
-        <category display_value="Lunch">63625f910f3f9f8062b6e64be1050e81</category>
+        <category display_value="Parking">2fe29f910f3f9f8062b6e64be1050e9f</category>
         <cost>0</cost>
         <custom_cart/>
         <delivery_plan/>
         <delivery_plan_script/>
         <delivery_time>1970-01-03 00:00:00</delivery_time>
-        <description><![CDATA[<p>Be treated to great food and company with the IT executive of your choice.</p>
-<p class="text-danger">25 pts</p>]]></description>
+        <description><![CDATA[<p><span style="font-size: 16px; font-weight: 400;">Get a great start to your morning with Specialties breakfast &amp; coffee served by your manager.</span></p>
+<p class="text-primary"><span style="font-size: 20px;">7 pts</span></p>
+<p><span style="font-size: 14px; font-weight: 200;"><em>Pick one breakfast item and coffee of choice from the Specialties menu. Your manager will work with you to select the best day and time for breakfast service.</em></span></p>]]></description>
         <entitlement_script/>
         <group/>
         <icon/>
@@ -25,7 +26,7 @@
         <mobile_picture/>
         <mobile_picture_type>use_desktop_picture</mobile_picture_type>
         <model/>
-        <name>Lunch with an Executive</name>
+        <name>Breakfast from your Manager</name>
         <no_cart>true</no_cart>
         <no_order>false</no_order>
         <no_order_now>false</no_order_now>
@@ -37,7 +38,7 @@
         <ordered_item_link/>
         <picture/>
         <preview>JavaScript: popupOpenStandard("com.glideapp.servicecatalog_cat_item_view.do?v=1&amp;sysparm_id=bebfdbd90f3f9f8062b6e64be1050e98&amp;sysparm_preview=true", "summary");</preview>
-        <price>25</price>
+        <price>7</price>
         <recurring_frequency/>
         <recurring_price>0</recurring_price>
         <redirect_url>generated_record</redirect_url>
@@ -53,7 +54,7 @@
 	current.sub_type = 'Redemption';
 	current.employee = gs.getUserID();
 	current.points = 0 - rp.price;
-	current.description = "Lunch with " + producer.executive;
+	current.description = rp.name;
 	var userRec = new GlideRecord('sys_user');
 	if (userRec.get(gs.getUserID())) {
 		current.department = userRec.department;
@@ -80,7 +81,7 @@
 		return myPoints;
 	}
 }());]]></script>
-        <short_description>Have lunch with an IT executive</short_description>
+        <short_description/>
         <show_variable_help_on_load>false</show_variable_help_on_load>
         <start_closed>false</start_closed>
         <sys_class_name>sc_cat_item_producer</sys_class_name>
@@ -88,15 +89,15 @@
         <sys_created_on>2018-08-07 21:51:12</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>bebfdbd90f3f9f8062b6e64be1050e98</sys_id>
-        <sys_mod_count>20</sys_mod_count>
-        <sys_name>Lunch with an Executive</sys_name>
+        <sys_mod_count>29</sys_mod_count>
+        <sys_name>Breakfast from your Manager</sys_name>
         <sys_package display_value="IMT Recognition" source="x_thimi_imt_rec">e93694ab0f279b8062b6e64be1050e59</sys_package>
         <sys_policy/>
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="IMT Recognition">e93694ab0f279b8062b6e64be1050e59</sys_scope>
         <sys_update_name>sc_cat_item_producer_bebfdbd90f3f9f8062b6e64be1050e98</sys_update_name>
-        <sys_updated_by>rbeeman</sys_updated_by>
-        <sys_updated_on>2018-08-24 15:47:59</sys_updated_on>
+        <sys_updated_by>isabellee</sys_updated_by>
+        <sys_updated_on>2018-10-26 17:18:42</sys_updated_on>
         <table_name>x_thimi_imt_rec_imt_recognition</table_name>
         <template/>
         <type>item</type>
@@ -115,19 +116,19 @@
     <sys_translated_text action="delete_multiple" query="documentkey=bebfdbd90f3f9f8062b6e64be1050e98"/>
     <fx_price action="delete_multiple" query="id=bebfdbd90f3f9f8062b6e64be1050e98"/>
     <fx_price action="INSERT_OR_UPDATE">
-        <amount>25</amount>
+        <amount>7</amount>
         <currency display_value="USD">USD</currency>
         <field>price</field>
         <id>bebfdbd90f3f9f8062b6e64be1050e98</id>
         <parent/>
-        <reference_amount>25</reference_amount>
+        <reference_amount>7</reference_amount>
         <reference_currency display_value="USD">USD</reference_currency>
         <sys_created_by>isabellee</sys_created_by>
         <sys_created_on>2018-08-07 21:51:12</sys_created_on>
         <sys_id>dbef5bd90f3f9f8062b6e64be1050e85</sys_id>
-        <sys_mod_count>2</sys_mod_count>
-        <sys_updated_by>rbeeman</sys_updated_by>
-        <sys_updated_on>2018-08-08 15:44:58</sys_updated_on>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_updated_by>isabellee</sys_updated_by>
+        <sys_updated_on>2018-10-26 16:20:26</sys_updated_on>
         <table>sc_cat_item_producer</table>
         <type>calculated</type>
     </fx_price>

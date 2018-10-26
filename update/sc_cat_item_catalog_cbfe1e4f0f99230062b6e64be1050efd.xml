@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <record_update table="sc_cat_item_catalog">
     <sc_cat_item_catalog action="INSERT_OR_UPDATE">
-        <sc_cat_item display_value="Holiday Party Raffle Ticket">a9b0cd2a132423801c7851522244b05d</sc_cat_item>
+        <sc_cat_item display_value="Google Home Mini">413c48c2db5da38041489806b996196c</sc_cat_item>
         <sc_catalog display_value="IMT Recognition Catalog">8679ad001373d7c01c7851522244b046</sc_catalog>
         <sys_class_name>sc_cat_item_catalog</sys_class_name>
-        <sys_created_by>rbeeman</sys_created_by>
-        <sys_created_on>2018-09-17 14:15:05</sys_created_on>
+        <sys_created_by>isabellee</sys_created_by>
+        <sys_created_on>2018-10-26 17:11:01</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
-        <sys_id>6db0cd2a132423801c7851522244b061</sys_id>
+        <sys_id>cbfe1e4f0f99230062b6e64be1050efd</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_name>IMT Recognition Catalog.Christmas Party Raffle Ticket</sys_name>
+        <sys_name>IMT Recognition Catalog.Google Home Mini</sys_name>
         <sys_package display_value="IMT Recognition" source="x_thimi_imt_rec">e93694ab0f279b8062b6e64be1050e59</sys_package>
         <sys_policy/>
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="IMT Recognition">e93694ab0f279b8062b6e64be1050e59</sys_scope>
-        <sys_update_name>sc_cat_item_catalog_6db0cd2a132423801c7851522244b061</sys_update_name>
-        <sys_updated_by>rbeeman</sys_updated_by>
-        <sys_updated_on>2018-09-17 14:15:05</sys_updated_on>
+        <sys_update_name>sc_cat_item_catalog_cbfe1e4f0f99230062b6e64be1050efd</sys_update_name>
+        <sys_updated_by>isabellee</sys_updated_by>
+        <sys_updated_on>2018-10-26 17:11:01</sys_updated_on>
     </sc_cat_item_catalog>
 </record_update>

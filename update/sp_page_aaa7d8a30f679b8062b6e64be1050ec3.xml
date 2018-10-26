@@ -5,7 +5,7 @@
   font-family: 'FontAwesome';&#13;
   content: '\f06b';&#13;
   margin:0 5px 0 -15px;&#13;
-  color: #d9534f;&#13;
+  color: $brand-primary;&#13;
 }&#13;
 &#13;
 .sp-attachments-input {&#13;
@@ -30,15 +30,15 @@
         <sys_created_on>2018-08-01 20:46:52</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>aaa7d8a30f679b8062b6e64be1050ec3</sys_id>
-        <sys_mod_count>6</sys_mod_count>
+        <sys_mod_count>7</sys_mod_count>
         <sys_name>rec_give</sys_name>
         <sys_package display_value="IMT Recognition" source="x_thimi_imt_rec">e93694ab0f279b8062b6e64be1050e59</sys_package>
         <sys_policy/>
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="IMT Recognition">e93694ab0f279b8062b6e64be1050e59</sys_scope>
         <sys_update_name>sp_page_aaa7d8a30f679b8062b6e64be1050ec3</sys_update_name>
-        <sys_updated_by>isabellee</sys_updated_by>
-        <sys_updated_on>2018-09-11 19:15:42</sys_updated_on>
+        <sys_updated_by>rbeeman</sys_updated_by>
+        <sys_updated_on>2018-10-26 17:38:51</sys_updated_on>
         <title>Recognize an Employee</title>
     </sp_page>
 </record_update>
