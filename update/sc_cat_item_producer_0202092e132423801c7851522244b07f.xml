@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<record_update table="sc_cat_item_producer">
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sc_cat_item_producer">
     <sc_cat_item_producer action="INSERT_OR_UPDATE">
         <active>true</active>
         <availability>on_desktop</availability>
@@ -11,11 +10,12 @@
         <delivery_plan/>
         <delivery_plan_script/>
         <delivery_time>1970-01-03 00:00:00</delivery_time>
-        <description><![CDATA[<p><span style="font-size: 16px; font-weight: 400;">Redeem for life's most valuable gift - time.</span></p>
+        <description><![CDATA[<p><span style="font-size: 16px; font-weight: 400;">Get a head start to your weekend, and leave two hours earlier on a Friday.</span></p>
 <p class="text-primary"><span style="font-size: 20px;"> 15 pts</span></p>
 <p><span style="font-size: 14px; font-weight: 200;"><em>Your manager will work with you to coordinate your time off request. Two time off requests cannot be redeemed on the same day.</em></span></p>]]></description>
         <entitlement_script/>
         <group/>
+        <hide_sp>false</hide_sp>
         <icon/>
         <ignore_price>false</ignore_price>
         <image/>
@@ -26,7 +26,7 @@
         <mobile_picture/>
         <mobile_picture_type>use_desktop_picture</mobile_picture_type>
         <model/>
-        <name>2-hour Early Departure / Late Arrival</name>
+        <name>Early Friday</name>
         <no_cart>true</no_cart>
         <no_order>false</no_order>
         <no_order_now>false</no_order_now>
@@ -37,6 +37,7 @@
         <order>0</order>
         <ordered_item_link/>
         <picture/>
+        <post_insert_script/>
         <preview>JavaScript: popupOpenStandard("com.glideapp.servicecatalog_cat_item_view.do?v=1&amp;sysparm_id=0202092e132423801c7851522244b07f&amp;sysparm_preview=true", "summary");</preview>
         <price>15</price>
         <recurring_frequency/>
@@ -54,6 +55,7 @@
 	current.sub_type = 'Redemption';
 	current.employee = gs.getUserID();
 	current.points = 0 - rp.price;
+	current.prize = rpId;
 	current.description = rp.name;
 	var userRec = new GlideRecord('sys_user');
 	if (userRec.get(gs.getUserID())) {
@@ -89,15 +91,15 @@
         <sys_created_on>2018-09-17 14:20:51</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>0202092e132423801c7851522244b07f</sys_id>
-        <sys_mod_count>8</sys_mod_count>
-        <sys_name>2-hour Early Departure / Late Arrival</sys_name>
+        <sys_mod_count>13</sys_mod_count>
+        <sys_name>Early Friday</sys_name>
         <sys_package display_value="IMT Recognition" source="x_thimi_imt_rec">e93694ab0f279b8062b6e64be1050e59</sys_package>
         <sys_policy/>
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="IMT Recognition">e93694ab0f279b8062b6e64be1050e59</sys_scope>
         <sys_update_name>sc_cat_item_producer_0202092e132423801c7851522244b07f</sys_update_name>
         <sys_updated_by>isabellee</sys_updated_by>
-        <sys_updated_on>2018-10-26 20:30:48</sys_updated_on>
+        <sys_updated_on>2019-01-29 23:02:35</sys_updated_on>
         <table_name>x_thimi_imt_rec_imt_recognition</table_name>
         <template/>
         <type>item</type>
@@ -151,6 +153,7 @@
     </fx_price>
     <sys_attachment action="INSERT_OR_UPDATE">
         <average_image_color>#3e3e3e</average_image_color>
+        <chunk_size_bytes/>
         <compressed>true</compressed>
         <content_type>image/jpeg</content_type>
         <encryption_context/>
@@ -159,6 +162,7 @@
         <image_width>67</image_width>
         <size_bytes>2003</size_bytes>
         <size_compressed>1833</size_compressed>
+        <state/>
         <sys_created_by>isabellee</sys_created_by>
         <sys_created_on>2018-10-24 18:34:25</sys_created_on>
         <sys_id>ddee106adbdde38041489806b9961972</sys_id>
@@ -188,6 +192,7 @@
     </sys_attachment_doc>
     <sys_attachment action="INSERT_OR_UPDATE">
         <average_image_color>#3e3e3e</average_image_color>
+        <chunk_size_bytes/>
         <compressed>true</compressed>
         <content_type>image/jpeg</content_type>
         <encryption_context/>
@@ -196,6 +201,7 @@
         <image_width>67</image_width>
         <size_bytes>2003</size_bytes>
         <size_compressed>1833</size_compressed>
+        <state/>
         <sys_created_by>isabellee</sys_created_by>
         <sys_created_on>2018-10-24 18:34:35</sys_created_on>
         <sys_id>f3eed02adbdde38041489806b99619bf</sys_id>

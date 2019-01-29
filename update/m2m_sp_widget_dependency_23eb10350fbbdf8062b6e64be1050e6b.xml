@@ -1,8 +1,7 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<record_update table="m2m_sp_widget_dependency">
+<?xml version="1.0" encoding="UTF-8"?><record_update table="m2m_sp_widget_dependency">
     <m2m_sp_widget_dependency action="INSERT_OR_UPDATE">
         <sp_dependency display_value="angular.dirPagination">eecb9cf10fbbdf8062b6e64be1050ee0</sp_dependency>
-        <sp_widget display_value="Recognition List">668af9c80ffbdb8062b6e64be1050e54</sp_widget>
+        <sp_widget display_value="Shout Outs List">668af9c80ffbdb8062b6e64be1050e54</sp_widget>
         <sys_class_name>m2m_sp_widget_dependency</sys_class_name>
         <sys_created_by>rbeeman</sys_created_by>
         <sys_created_on>2018-08-08 20:51:51</sys_created_on>

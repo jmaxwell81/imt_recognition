@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_transform_script">
+    <sys_transform_script action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <map display_value="Recognition Transform Map">8eb0ce000f9fa34062b6e64be1050e4f</map>
+        <order>100</order>
+        <script><![CDATA[(function (){
+	var nominee = source.u_nominee_name;
+	var nominator = source.u_nominator_name;
+	var desc = source.u_achievement_description;
+	var create = source.u_created;
+
+	
+	var emp = new GlideRecord('sys_user');
+	emp.addQuery('name', nominee);
+	emp.addQuery('u_lob', 'Corporate - IT');
+	emp.query();
+	if (emp.next()) {
+		target.employee = emp.sys_id;
+		target.department = emp.department;
+	}
+	var nom = new GlideRecord('sys_user');
+	nom.addQuery('name', nominator);
+	nom.addQuery('u_lob', 'Corporate - IT');
+	nom.query();
+	if (nom.next()) {
+		target.nominator = nom.sys_id;
+	}
+	
+	target.description = desc;
+	target.sub_type = 'Recognition';
+	target.sys_created_on = create;
+	
+}());]]></script>
+        <sys_class_name>sys_transform_script</sys_class_name>
+        <sys_created_by>isabellee</sys_created_by>
+        <sys_created_on>2019-01-24 21:35:30</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>a3a272840f13e34062b6e64be1050eff</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name>onBefore</sys_name>
+        <sys_package display_value="IMT Recognition" source="x_thimi_imt_rec">e93694ab0f279b8062b6e64be1050e59</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="IMT Recognition">e93694ab0f279b8062b6e64be1050e59</sys_scope>
+        <sys_update_name>sys_transform_script_a3a272840f13e34062b6e64be1050eff</sys_update_name>
+        <sys_updated_by>isabellee</sys_updated_by>
+        <sys_updated_on>2019-01-24 23:48:23</sys_updated_on>
+        <when>onBefore</when>
+    </sys_transform_script>
+</record_update>

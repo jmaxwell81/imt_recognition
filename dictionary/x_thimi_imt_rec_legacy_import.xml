@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element extends="sys_import_set_row" label="legacy_import" max_length="40" name="x_thimi_imt_rec_legacy_import" sizeclass="5190" type="collection">
+        <element attributes="import_attribute_name=Achievement Description,edge_encryption_enabled=true" label="Achievement Description" max_length="1254" name="u_achievement_description" type="string"/>
+        <element attributes="import_attribute_name=Created" label="Created" max_length="40" name="u_created" type="glide_date_time"/>
+        <element attributes="import_attribute_name=Fulfilled,edge_encryption_enabled=true" label="Fulfilled" max_length="40" name="u_fulfilled" type="string"/>
+        <element attributes="import_attribute_name=Fulfillment Date" label="Fulfillment Date" max_length="40" name="u_fulfillment_date" type="glide_date"/>
+        <element attributes="import_attribute_name=Item Type,edge_encryption_enabled=true" label="Item Type" max_length="40" name="u_item_type" type="string"/>
+        <element attributes="import_attribute_name=Legendary Service,edge_encryption_enabled=true" label="Legendary Service" max_length="40" name="u_legendary_service" type="string"/>
+        <element attributes="import_attribute_name=Nominator Department,edge_encryption_enabled=true" label="Nominator Department" max_length="40" name="u_nominator_department" type="string"/>
+        <element attributes="import_attribute_name=Nominator Name,edge_encryption_enabled=true" label="Nominator Name" max_length="40" name="u_nominator_name" type="string"/>
+        <element attributes="import_attribute_name=Nominee Department,edge_encryption_enabled=true" label="Nominee Department" max_length="40" name="u_nominee_department" type="string"/>
+        <element attributes="import_attribute_name=Nominee Department Manager,edge_encryption_enabled=true" label="Nominee Department Manager" max_length="40" name="u_nominee_department_manager" type="string"/>
+        <element attributes="import_attribute_name=Nominee Name,edge_encryption_enabled=true" label="Nominee Name" max_length="40" name="u_nominee_name" type="string"/>
+        <element attributes="import_attribute_name=Path,edge_encryption_enabled=true" label="Path" max_length="40" name="u_path" type="string"/>
+    </element>
+</database>

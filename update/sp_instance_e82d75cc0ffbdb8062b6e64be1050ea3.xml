@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<record_update table="sp_instance">
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_instance">
     <sp_instance action="INSERT_OR_UPDATE">
         <active>true</active>
         <class_name/>
@@ -12,7 +11,7 @@
         <short_description/>
         <size>md</size>
         <sp_column display_value="1">97ecb1cc0ffbdb8062b6e64be1050eeb</sp_column>
-        <sp_widget display_value="Recognition List">668af9c80ffbdb8062b6e64be1050e54</sp_widget>
+        <sp_widget display_value="Shout Outs List">668af9c80ffbdb8062b6e64be1050e54</sp_widget>
         <sys_class_name>sp_instance</sys_class_name>
         <sys_created_by>rbeeman</sys_created_by>
         <sys_created_on>2018-08-03 17:27:10</sys_created_on>

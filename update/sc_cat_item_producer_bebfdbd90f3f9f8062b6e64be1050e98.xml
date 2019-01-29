@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<record_update table="sc_cat_item_producer">
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sc_cat_item_producer">
     <sc_cat_item_producer action="INSERT_OR_UPDATE">
         <active>true</active>
         <availability>on_desktop</availability>
@@ -12,10 +11,11 @@
         <delivery_plan_script/>
         <delivery_time>1970-01-03 00:00:00</delivery_time>
         <description><![CDATA[<p><span style="font-size: 16px; font-weight: 400;">Get a great start to your morning with Specialties breakfast &amp; coffee served by your manager.</span></p>
-<p class="text-primary"><span style="font-size: 20px;">7 pts</span></p>
+<p class="text-primary"><span style="font-size: 20px;">20 pts</span></p>
 <p><span style="font-size: 14px; font-weight: 200;"><em>Pick one breakfast item and coffee of choice from the Specialties menu. Your manager will work with you to select the best day and time for breakfast service.</em></span></p>]]></description>
         <entitlement_script/>
         <group/>
+        <hide_sp>false</hide_sp>
         <icon/>
         <ignore_price>false</ignore_price>
         <image/>
@@ -37,8 +37,9 @@
         <order>0</order>
         <ordered_item_link/>
         <picture/>
+        <post_insert_script/>
         <preview>JavaScript: popupOpenStandard("com.glideapp.servicecatalog_cat_item_view.do?v=1&amp;sysparm_id=bebfdbd90f3f9f8062b6e64be1050e98&amp;sysparm_preview=true", "summary");</preview>
-        <price>7</price>
+        <price>20</price>
         <recurring_frequency/>
         <recurring_price>0</recurring_price>
         <redirect_url>generated_record</redirect_url>
@@ -54,6 +55,7 @@
 	current.sub_type = 'Redemption';
 	current.employee = gs.getUserID();
 	current.points = 0 - rp.price;
+	current.prize = rpId;
 	current.description = rp.name;
 	var userRec = new GlideRecord('sys_user');
 	if (userRec.get(gs.getUserID())) {
@@ -89,7 +91,7 @@
         <sys_created_on>2018-08-07 21:51:12</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>bebfdbd90f3f9f8062b6e64be1050e98</sys_id>
-        <sys_mod_count>29</sys_mod_count>
+        <sys_mod_count>35</sys_mod_count>
         <sys_name>Breakfast from your Manager</sys_name>
         <sys_package display_value="IMT Recognition" source="x_thimi_imt_rec">e93694ab0f279b8062b6e64be1050e59</sys_package>
         <sys_policy/>
@@ -97,7 +99,7 @@
         <sys_scope display_value="IMT Recognition">e93694ab0f279b8062b6e64be1050e59</sys_scope>
         <sys_update_name>sc_cat_item_producer_bebfdbd90f3f9f8062b6e64be1050e98</sys_update_name>
         <sys_updated_by>isabellee</sys_updated_by>
-        <sys_updated_on>2018-10-26 17:18:42</sys_updated_on>
+        <sys_updated_on>2019-01-29 23:01:38</sys_updated_on>
         <table_name>x_thimi_imt_rec_imt_recognition</table_name>
         <template/>
         <type>item</type>
@@ -116,19 +118,19 @@
     <sys_translated_text action="delete_multiple" query="documentkey=bebfdbd90f3f9f8062b6e64be1050e98"/>
     <fx_price action="delete_multiple" query="id=bebfdbd90f3f9f8062b6e64be1050e98"/>
     <fx_price action="INSERT_OR_UPDATE">
-        <amount>7</amount>
+        <amount>20</amount>
         <currency display_value="USD">USD</currency>
         <field>price</field>
         <id>bebfdbd90f3f9f8062b6e64be1050e98</id>
         <parent/>
-        <reference_amount>7</reference_amount>
+        <reference_amount>20</reference_amount>
         <reference_currency display_value="USD">USD</reference_currency>
         <sys_created_by>isabellee</sys_created_by>
         <sys_created_on>2018-08-07 21:51:12</sys_created_on>
         <sys_id>dbef5bd90f3f9f8062b6e64be1050e85</sys_id>
-        <sys_mod_count>3</sys_mod_count>
+        <sys_mod_count>4</sys_mod_count>
         <sys_updated_by>isabellee</sys_updated_by>
-        <sys_updated_on>2018-10-26 16:20:26</sys_updated_on>
+        <sys_updated_on>2019-01-28 22:18:39</sys_updated_on>
         <table>sc_cat_item_producer</table>
         <type>calculated</type>
     </fx_price>
@@ -151,6 +153,7 @@
     </fx_price>
     <sys_attachment action="INSERT_OR_UPDATE">
         <average_image_color>#50505a</average_image_color>
+        <chunk_size_bytes/>
         <compressed>true</compressed>
         <content_type>image/jpeg</content_type>
         <encryption_context/>
@@ -159,6 +162,7 @@
         <image_width>180</image_width>
         <size_bytes>4207</size_bytes>
         <size_compressed>3123</size_compressed>
+        <state/>
         <sys_created_by>isabellee</sys_created_by>
         <sys_created_on>2018-08-07 21:51:19</sys_created_on>
         <sys_id>8dffdb990f3f9f8062b6e64be1050ec3</sys_id>
@@ -197,6 +201,7 @@
     </sys_attachment_doc>
     <sys_attachment action="INSERT_OR_UPDATE">
         <average_image_color>#50505a</average_image_color>
+        <chunk_size_bytes/>
         <compressed>true</compressed>
         <content_type>image/jpeg</content_type>
         <encryption_context/>
@@ -205,6 +210,7 @@
         <image_width>180</image_width>
         <size_bytes>4207</size_bytes>
         <size_compressed>3123</size_compressed>
+        <state/>
         <sys_created_by>isabellee</sys_created_by>
         <sys_created_on>2018-08-07 22:08:59</sys_created_on>
         <sys_id>e7f3a79d0f3f9f8062b6e64be1050e26</sys_id>

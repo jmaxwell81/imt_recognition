@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<record_update table="sp_page">
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_page">
     <sp_page action="INSERT_OR_UPDATE">
+        <category>custom</category>
         <css>&#13;
 &#13;
 .sp-attachments-input {&#13;
@@ -15,6 +15,7 @@
   margin-top: -5px;&#13;
 }</css>
         <draft>false</draft>
+        <dynamic_title_structure/>
         <id>rec_form</id>
         <internal>false</internal>
         <public>false</public>

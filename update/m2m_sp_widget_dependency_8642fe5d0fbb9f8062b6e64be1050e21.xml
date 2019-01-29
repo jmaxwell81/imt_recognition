@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<record_update table="m2m_sp_widget_dependency">
+<?xml version="1.0" encoding="UTF-8"?><record_update table="m2m_sp_widget_dependency">
     <m2m_sp_widget_dependency action="INSERT_OR_UPDATE">
         <sp_dependency display_value="countUp.js">b6227a5d0fbb9f8062b6e64be1050ee2</sp_dependency>
         <sp_widget display_value="Recognition Points">417196b413775bc01c7851522244b0c4</sp_widget>

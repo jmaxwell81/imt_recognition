@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_ui_policy">
+    <sys_ui_policy action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <conditions table="x_thimi_imt_rec_imt_recognition">sub_type=Team Participation^ORsub_type=Participation^ORsub_type=Redemption^EQ<item endquery="false" field="sub_type" goto="false" newquery="false" operator="=" or="false" value="Team Participation"/>
+            <item endquery="false" field="sub_type" goto="false" newquery="false" operator="=" or="true" value="Participation"/>
+            <item endquery="false" field="sub_type" goto="false" newquery="false" operator="=" or="true" value="Redemption"/>
+            <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
+        </conditions>
+        <description/>
+        <global>true</global>
+        <inherit>false</inherit>
+        <isolate_script>true</isolate_script>
+        <model_id/>
+        <model_table/>
+        <on_load>true</on_load>
+        <order>100</order>
+        <reverse_if_false>true</reverse_if_false>
+        <run_scripts>false</run_scripts>
+        <script_false><![CDATA[function onCondition() {
+
+}]]></script_false>
+        <script_true><![CDATA[function onCondition() {
+
+}]]></script_true>
+        <set_values/>
+        <short_description>Hide participation record &amp; nominator</short_description>
+        <sys_class_name>sys_ui_policy</sys_class_name>
+        <sys_created_by>isabellee</sys_created_by>
+        <sys_created_on>2019-01-28 22:54:24</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_domain>global</sys_domain>
+        <sys_id>5fe2bf110f5fa74062b6e64be1050e18</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_name>Hide participation record &amp; nominator</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="IMT Recognition" source="x_thimi_imt_rec">e93694ab0f279b8062b6e64be1050e59</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="IMT Recognition">e93694ab0f279b8062b6e64be1050e59</sys_scope>
+        <sys_update_name>sys_ui_policy_5fe2bf110f5fa74062b6e64be1050e18</sys_update_name>
+        <sys_updated_by>isabellee</sys_updated_by>
+        <sys_updated_on>2019-01-29 16:12:33</sys_updated_on>
+        <table>x_thimi_imt_rec_imt_recognition</table>
+        <ui_type>0</ui_type>
+        <view/>
+    </sys_ui_policy>
+</record_update>

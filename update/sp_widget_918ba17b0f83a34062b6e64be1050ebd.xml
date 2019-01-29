@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function($scope, $window, spUtil, $timeout) {
+	/* widget controller */
+	var c = this;
+	c.data.user = {};
+	c.submitted = false;
+
+	$scope.user = {
+		displayValue: c.data.user.name,
+		value: c.data.user.sys_id,
+		name: 'user'
+	};
+
+	$scope.$on("field.change", function(event, data) {
+		if (data.field.name == 'user') {
+			c.data.userId = data.newValue;
+		}
+	});	
+	
+	c.submitForm = function() {
+			c.submitted = true;
+			c.server.get({
+				action: 'submitForm',
+				userId: c.data.userId,
+				treat: c.treat.value,
+				recognition: c.data.Recognition
+			}).then(function(r) {
+				$timeout(function() {
+					$window.location.href="?id=rec_list";
+				}, 2500, false);
+			});	
+	} 
+} 
+
+
+]]></client_script>
+        <controller_as>c</controller_as>
+        <css>form {&#13;
+  margin-top: 20px;&#13;
+  font-size: 14.4px;&#13;
+}&#13;
+&#13;
+#s2id_user {&#13;
+  margin-bottom: 20px;&#13;
+}&#13;
+&#13;
+textarea, select {&#13;
+  width: 100%;&#13;
+  padding: 5px;&#13;
+  border-style: solid;&#13;
+  border-width: 1px;&#13;
+  border-radius: 4px;&#13;
+  border-color: rgb(189, 192, 196);&#13;
+}&#13;
+&#13;
+textarea, select, .select2-choice {&#13;
+  margin-bottom: 15px;&#13;
+}&#13;
+&#13;
+textarea {&#13;
+  resize: vertical;&#13;
+}&#13;
+&#13;
+button {&#13;
+  margin-top: 15px;&#13;
+}&#13;
+&#13;
+.required::before {&#13;
+	content: '*';&#13;
+  color: red;&#13;
+  margin-right: 2px;&#13;
+}&#13;
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>rec-team-give</id>
+        <internal>false</internal>
+        <link/>
+        <name>Recognition Team Form</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+
+	/* populate the 'data' object */
+	/* e.g., data.table = $sp.getValue('table'); */
+	data.treat = [];
+	var treatGR = new GlideRecord('sys_choice');
+	treatGR.addQuery('name', 'x_thimi_imt_rec_imt_recognition');
+	treatGR.addQuery('element', 'treat');
+	treatGR.addQuery('inactive', false);
+	treatGR.query();
+	while (treatGR.next()) {
+		var eat = {
+			name: treatGR.label.toString(),
+			value: treatGR.value.toString()
+		};
+		data.treat.push(eat); 
+	}
+
+	data.recognizerId = gs.getUserID();
+
+	if (input) {
+		if (input.action == 'submitForm') {	
+			var nomRec = createNomatorRecord(input.userId);
+			var userList = input.userId.split(',');
+			for (var i = 0, leng = userList.length; i < leng; i++) {
+				var empRec = createNomineeRecord(userList[i], nomRec);
+			}
+			gs.addInfoMessage('Thank you for your recognition.');
+		}
+	}
+
+	function createNomatorRecord(userList) {		
+		var nomRec,
+				userId = gs.getUserID(),
+				teamArr = [];
+
+		var userGr = new GlideRecord('sys_user');
+		userGr.addEncodedQuery('sys_idIN' + userList);
+		userGr.orderBy('name');
+		userGr.query();
+		while (userGr.next()) {
+			teamArr.push(userGr.getValue('name'));
+		}
+
+		var desc = "Members of Team: " + teamArr.join(', ') + "\n\n" + "Reasons for Shout Out: " + input.recognition + "\n";
+
+		var	empPart = new GlideRecord('x_thimi_imt_rec_imt_recognition');
+		empPart.newRecord();
+		empPart.sub_type = 'Team Participation';
+		empPart.treat = input.treat;
+		empPart.employee = userId;
+		var userRec = new GlideRecord('sys_user');
+		if (userRec.get(userId)) {
+			empPart.department = userRec.department;
+		}
+		empPart.description = desc;
+		nomRec = empPart.insert();
+		return nomRec;
+	}
+
+	function createNomineeRecord(userId, nomRec) {
+		empRec = new GlideRecord('x_thimi_imt_rec_imt_recognition');
+		empRec.newRecord();
+		empRec.sub_type = 'Team Recognition';
+		empRec.nominator = gs.getUserID();
+		empRec.employee = userId;
+		var userRec = new GlideRecord('sys_user');
+		if (userRec.get(userId)) {
+			empRec.department = userRec.department;
+		}
+		empRec.treat = input.treat;
+		empRec.description = input.recognition;
+		empRec.participation_record = nomRec;
+		empRec.insert();
+		return empRec;
+	}
+
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>isabellee</sys_created_by>
+        <sys_created_on>2019-01-23 21:11:30</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>918ba17b0f83a34062b6e64be1050ebd</sys_id>
+        <sys_mod_count>126</sys_mod_count>
+        <sys_name>Recognition Team Form</sys_name>
+        <sys_package display_value="IMT Recognition" source="x_thimi_imt_rec">e93694ab0f279b8062b6e64be1050e59</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="IMT Recognition">e93694ab0f279b8062b6e64be1050e59</sys_scope>
+        <sys_update_name>sp_widget_918ba17b0f83a34062b6e64be1050ebd</sys_update_name>
+        <sys_updated_by>rbeeman</sys_updated_by>
+        <sys_updated_on>2019-01-29 17:50:09</sys_updated_on>
+        <template><![CDATA[<div>
+    <form name='giveRec' ng-submit="c.submitForm()" novalidate>
+        <label for='user' class="required">Select Employees</label>
+        <sn-record-picker id="user" name="user" field="user" table="'sys_user'" display-field="'name'" value-field="'sys_id'" search-fields="'name'" multiple='true' page-size="100" default-query="'sys_id!=' + c.data.recognizerId + '^active=true^u_employee=true^u_lob=Corporate - IT'" required>
+        </sn-record-picker>    
+        <label for='treat' class='required'>Treat the Team</label>
+        <select id='treat' ng-options='item.name for item in c.data.treat track by item.value' ng-model='c.treat' required></select>       
+        <label for='recognition' class='required'>Reason for Shout Out</label>
+        <textarea id='recognition' rows='4' ng-model='c.data.Recognition' required></textarea><br>      
+        <button type='submit' class='btn btn-danger pull-right' ng-disabled="giveRec.$invalid || c.submitted">Submit</button>
+    </form>
+</div>]]></template>
+    </sp_widget>
+</record_update>

@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<record_update table="sc_cat_item_category">
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sc_cat_item_category">
     <sc_cat_item_category action="INSERT_OR_UPDATE">
         <sc_cat_item display_value="Breakfast from your Manager">bebfdbd90f3f9f8062b6e64be1050e98</sc_cat_item>
         <sc_category display_value="Lunch">63625f910f3f9f8062b6e64be1050e81</sc_category>

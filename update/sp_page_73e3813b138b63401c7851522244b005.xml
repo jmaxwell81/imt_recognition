@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_page">
+    <sp_page action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <css>.top_icon {&#13;
+  border-style: solid;&#13;
+  border-color: LightGray;&#13;
+  border-width: 0.5px;&#13;
+  padding: 110px 20px 110px 20px !important;&#13;
+}&#13;
+&#13;
+.container_body {&#13;
+  margin: 0;&#13;
+  position: absolute;&#13;
+  top: 40%;&#13;
+  left: 50%;&#13;
+  -ms-transform: translate(-50%, -40%);&#13;
+  transform: translate(-50%, -40%);&#13;
+}&#13;
+&#13;
+.col-md-6 {&#13;
+  padding-left: 30px;&#13;
+  padding-right: 30px;&#13;
+}&#13;
+&#13;
+@media only screen and (max-width: 1199px) {&#13;
+  .top_icon {&#13;
+    border-width: 0px;&#13;
+  }&#13;
+}&#13;
+&#13;
+@media only screen and (max-width: 991px) {&#13;
+  .top_icon {&#13;
+    padding: 50px 15px 50px 15px  !important;&#13;
+  }&#13;
+}&#13;
+&#13;
+@media only screen and (max-width: 767px) {&#13;
+  .col-md-6 {&#13;
+    padding-left: 0px;&#13;
+    padding-right: 0px;&#13;
+  }&#13;
+  .top_icon {&#13;
+    padding: 15px 0px 15px 0px  !important;&#13;
+  }&#13;
+}</css>
+        <draft>false</draft>
+        <dynamic_title_structure/>
+        <id>rec_shout_out</id>
+        <internal>false</internal>
+        <public>false</public>
+        <roles/>
+        <short_description/>
+        <sys_class_name>sp_page</sys_class_name>
+        <sys_created_by>rbeeman</sys_created_by>
+        <sys_created_on>2019-01-23 18:18:32</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>73e3813b138b63401c7851522244b005</sys_id>
+        <sys_mod_count>30</sys_mod_count>
+        <sys_name>rec_shout_out</sys_name>
+        <sys_package display_value="IMT Recognition" source="x_thimi_imt_rec">e93694ab0f279b8062b6e64be1050e59</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="IMT Recognition">e93694ab0f279b8062b6e64be1050e59</sys_scope>
+        <sys_update_name>sp_page_73e3813b138b63401c7851522244b005</sys_update_name>
+        <sys_updated_by>rbeeman</sys_updated_by>
+        <sys_updated_on>2019-01-23 22:39:00</sys_updated_on>
+        <title>Give a Shout Out</title>
+    </sp_page>
+</record_update>

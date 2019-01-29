@@ -1,10 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<record_update>
+<?xml version="1.0" encoding="UTF-8"?><record_update>
     <sys_ui_list parent="" relationship="" sys_domain="global" table="x_thimi_imt_rec_imt_recognition" version="2" view="RPT50350dee0f08630062b6e64be1050ee2">
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
             <element>number</element>
-            <list_id display_value="x_thimi_imt_rec_imt_recognition" element="NULL" name="x_thimi_imt_rec_imt_recognition" parent="NULL" relationship="NULL" sys_domain="global" view="d8350dee0f08630062b6e64be1050ee6">54350dee0f08630062b6e64be1050ee7</list_id>
+            <list_id display_value="x_thimi_imt_rec_imt_recognition" element="NULL" name="x_thimi_imt_rec_imt_recognition" parent="NULL" relationship="NULL" sys_domain="global" view="7d1949e0dbe92b04c2abf2f5ab9619c8">54350dee0f08630062b6e64be1050ee7</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>0</position>
@@ -19,7 +18,7 @@
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
             <element>key_result</element>
-            <list_id display_value="x_thimi_imt_rec_imt_recognition" element="NULL" name="x_thimi_imt_rec_imt_recognition" parent="NULL" relationship="NULL" sys_domain="global" view="d8350dee0f08630062b6e64be1050ee6">54350dee0f08630062b6e64be1050ee7</list_id>
+            <list_id display_value="x_thimi_imt_rec_imt_recognition" element="NULL" name="x_thimi_imt_rec_imt_recognition" parent="NULL" relationship="NULL" sys_domain="global" view="7d1949e0dbe92b04c2abf2f5ab9619c8">54350dee0f08630062b6e64be1050ee7</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>1</position>
@@ -34,7 +33,7 @@
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
             <element>employee</element>
-            <list_id display_value="x_thimi_imt_rec_imt_recognition" element="NULL" name="x_thimi_imt_rec_imt_recognition" parent="NULL" relationship="NULL" sys_domain="global" view="d8350dee0f08630062b6e64be1050ee6">54350dee0f08630062b6e64be1050ee7</list_id>
+            <list_id display_value="x_thimi_imt_rec_imt_recognition" element="NULL" name="x_thimi_imt_rec_imt_recognition" parent="NULL" relationship="NULL" sys_domain="global" view="7d1949e0dbe92b04c2abf2f5ab9619c8">54350dee0f08630062b6e64be1050ee7</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>2</position>
@@ -49,7 +48,7 @@
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
             <element>nominator</element>
-            <list_id display_value="x_thimi_imt_rec_imt_recognition" element="NULL" name="x_thimi_imt_rec_imt_recognition" parent="NULL" relationship="NULL" sys_domain="global" view="d8350dee0f08630062b6e64be1050ee6">54350dee0f08630062b6e64be1050ee7</list_id>
+            <list_id display_value="x_thimi_imt_rec_imt_recognition" element="NULL" name="x_thimi_imt_rec_imt_recognition" parent="NULL" relationship="NULL" sys_domain="global" view="7d1949e0dbe92b04c2abf2f5ab9619c8">54350dee0f08630062b6e64be1050ee7</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>3</position>
@@ -64,7 +63,7 @@
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
             <element>description</element>
-            <list_id display_value="x_thimi_imt_rec_imt_recognition" element="NULL" name="x_thimi_imt_rec_imt_recognition" parent="NULL" relationship="NULL" sys_domain="global" view="d8350dee0f08630062b6e64be1050ee6">54350dee0f08630062b6e64be1050ee7</list_id>
+            <list_id display_value="x_thimi_imt_rec_imt_recognition" element="NULL" name="x_thimi_imt_rec_imt_recognition" parent="NULL" relationship="NULL" sys_domain="global" view="7d1949e0dbe92b04c2abf2f5ab9619c8">54350dee0f08630062b6e64be1050ee7</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>4</position>
@@ -103,7 +102,7 @@
             <sys_updated_on>2018-08-23 18:03:15</sys_updated_on>
             <sys_user/>
             <u_notes/>
-            <view display_value="Rpt50350dee0f08630062b6e64be1050ee2" name="RPT50350dee0f08630062b6e64be1050ee2">d8350dee0f08630062b6e64be1050ee6</view>
+            <view display_value="Rpt50350dee0f08630062b6e64be1050ee2" name="RPT50350dee0f08630062b6e64be1050ee2">7d1949e0dbe92b04c2abf2f5ab9619c8</view>
             <view_name/>
         </sys_ui_list>
     </sys_ui_list>

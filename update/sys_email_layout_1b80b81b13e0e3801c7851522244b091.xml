@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<record_update table="sys_email_layout">
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_email_layout">
     <sys_email_layout action="INSERT_OR_UPDATE">
         <advanced>true</advanced>
         <advanced_layout><![CDATA[<style type="text/css">

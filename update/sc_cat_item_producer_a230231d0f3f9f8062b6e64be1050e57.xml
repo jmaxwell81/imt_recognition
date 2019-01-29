@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<record_update table="sc_cat_item_producer">
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sc_cat_item_producer">
     <sc_cat_item_producer action="INSERT_OR_UPDATE">
         <active>true</active>
         <availability>on_desktop</availability>
@@ -12,10 +11,11 @@
         <delivery_plan_script/>
         <delivery_time>1970-01-03 00:00:00</delivery_time>
         <description><![CDATA[<p><span style="font-size: 16px; font-weight: 400;">Roll into work like a Superstar with front row VIP parking for one week.</span></p>
-<p class="text-primary"><span style="font-size: 20px;">3 pts</span></p>
+<p class="text-primary"><span style="font-size: 20px;">10&nbsp;pts</span></p>
 <p><span style="font-size: 14px; font-weight: 200;"><em>Parking is located outside the 101 Innovation Building. After redemption, the&nbsp;Team Advocates will contact you to schedule your VIP Parking week.</em></span></p>]]></description>
         <entitlement_script/>
         <group/>
+        <hide_sp>false</hide_sp>
         <icon/>
         <ignore_price>false</ignore_price>
         <image/>
@@ -37,8 +37,9 @@
         <order>1</order>
         <ordered_item_link/>
         <picture/>
+        <post_insert_script/>
         <preview>JavaScript: popupOpenStandard("com.glideapp.servicecatalog_cat_item_view.do?v=1&amp;sysparm_id=a230231d0f3f9f8062b6e64be1050e57&amp;sysparm_preview=true", "summary");</preview>
-        <price>3</price>
+        <price>10</price>
         <recurring_frequency/>
         <recurring_price>0</recurring_price>
         <redirect_url>generated_record</redirect_url>
@@ -54,7 +55,8 @@
 	current.sub_type = 'Redemption';
 	current.employee = gs.getUserID();
 	current.points = 0 - rp.price;
-	current.description = "VIP Parking for 1 Week";
+	current.prize = rpId;
+	current.description = rp.name;
 	var userRec = new GlideRecord('sys_user');
 	if (userRec.get(gs.getUserID())) {
 		current.department = userRec.department;
@@ -89,7 +91,7 @@
         <sys_created_on>2018-08-07 21:52:55</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>a230231d0f3f9f8062b6e64be1050e57</sys_id>
-        <sys_mod_count>24</sys_mod_count>
+        <sys_mod_count>30</sys_mod_count>
         <sys_name>VIP Parking</sys_name>
         <sys_package display_value="IMT Recognition" source="x_thimi_imt_rec">e93694ab0f279b8062b6e64be1050e59</sys_package>
         <sys_policy/>
@@ -97,7 +99,7 @@
         <sys_scope display_value="IMT Recognition">e93694ab0f279b8062b6e64be1050e59</sys_scope>
         <sys_update_name>sc_cat_item_producer_a230231d0f3f9f8062b6e64be1050e57</sys_update_name>
         <sys_updated_by>isabellee</sys_updated_by>
-        <sys_updated_on>2018-10-26 20:20:36</sys_updated_on>
+        <sys_updated_on>2019-01-29 23:01:58</sys_updated_on>
         <table_name>x_thimi_imt_rec_imt_recognition</table_name>
         <template/>
         <type>item</type>
@@ -116,19 +118,19 @@
     <sys_translated_text action="delete_multiple" query="documentkey=a230231d0f3f9f8062b6e64be1050e57"/>
     <fx_price action="delete_multiple" query="id=a230231d0f3f9f8062b6e64be1050e57"/>
     <fx_price action="INSERT_OR_UPDATE">
-        <amount>3</amount>
+        <amount>10</amount>
         <currency display_value="USD">USD</currency>
         <field>price</field>
         <id>a230231d0f3f9f8062b6e64be1050e57</id>
         <parent/>
-        <reference_amount>3</reference_amount>
+        <reference_amount>10</reference_amount>
         <reference_currency display_value="USD">USD</reference_currency>
         <sys_created_by>isabellee</sys_created_by>
         <sys_created_on>2018-08-07 21:52:55</sys_created_on>
         <sys_id>a45067d90f3f9f8062b6e64be1050ed6</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_mod_count>3</sys_mod_count>
         <sys_updated_by>isabellee</sys_updated_by>
-        <sys_updated_on>2018-10-26 16:15:44</sys_updated_on>
+        <sys_updated_on>2019-01-28 22:20:49</sys_updated_on>
         <table>sc_cat_item_producer</table>
         <type>calculated</type>
     </fx_price>
@@ -151,6 +153,7 @@
     </fx_price>
     <sys_attachment action="INSERT_OR_UPDATE">
         <average_image_color>#4d4d4d</average_image_color>
+        <chunk_size_bytes/>
         <compressed>true</compressed>
         <content_type>image/jpeg</content_type>
         <encryption_context/>
@@ -159,6 +162,7 @@
         <image_width>168</image_width>
         <size_bytes>3395</size_bytes>
         <size_compressed>2661</size_compressed>
+        <state/>
         <sys_created_by>isabellee</sys_created_by>
         <sys_created_on>2018-08-07 21:53:00</sys_created_on>
         <sys_id>ad506fd90f3f9f8062b6e64be1050e10</sys_id>
@@ -188,6 +192,7 @@
     </sys_attachment_doc>
     <sys_attachment action="INSERT_OR_UPDATE">
         <average_image_color>#4d4d4d</average_image_color>
+        <chunk_size_bytes/>
         <compressed>true</compressed>
         <content_type>image/jpeg</content_type>
         <encryption_context/>
@@ -196,6 +201,7 @@
         <image_width>168</image_width>
         <size_bytes>3395</size_bytes>
         <size_compressed>2661</size_compressed>
+        <state/>
         <sys_created_by>isabellee</sys_created_by>
         <sys_created_on>2018-08-07 22:08:31</sys_created_on>
         <sys_id>f0e3679d0f3f9f8062b6e64be1050e2f</sys_id>

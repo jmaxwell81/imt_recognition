@@ -1,7 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<record_update table="sc_cat_item_producer">
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sc_cat_item_producer">
     <sc_cat_item_producer action="INSERT_OR_UPDATE">
-        <active>true</active>
+        <active>false</active>
         <availability>on_desktop</availability>
         <billable>false</billable>
         <can_cancel>false</can_cancel>
@@ -16,6 +15,7 @@
 <p><span style="font-size: 14px; font-weight: 200;"> <em>If redeemed, voucher will be presented at the end of the month. Duffy reservation times subject to availability. Blackout dates apply.</em></span></p>]]></description>
         <entitlement_script/>
         <group/>
+        <hide_sp>false</hide_sp>
         <icon/>
         <ignore_price>false</ignore_price>
         <image/>
@@ -37,6 +37,7 @@
         <order>0</order>
         <ordered_item_link/>
         <picture/>
+        <post_insert_script/>
         <preview>JavaScript: popupOpenStandard("com.glideapp.servicecatalog_cat_item_view.do?v=1&amp;sysparm_id=33fd0046db5da38041489806b99619e6&amp;sysparm_preview=true", "summary");</preview>
         <price>25</price>
         <recurring_frequency/>
@@ -54,6 +55,7 @@
 	current.sub_type = 'Redemption';
 	current.employee = gs.getUserID();
 	current.points = 0 - rp.price;
+	current.prize = rpId;
 	current.description = rp.name;
 	var userRec = new GlideRecord('sys_user');
 	if (userRec.get(gs.getUserID())) {
@@ -89,7 +91,7 @@
         <sys_created_on>2018-10-23 04:05:43</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>33fd0046db5da38041489806b99619e6</sys_id>
-        <sys_mod_count>4</sys_mod_count>
+        <sys_mod_count>7</sys_mod_count>
         <sys_name>90 Minute Duffy Boat Ride</sys_name>
         <sys_package display_value="IMT Recognition" source="x_thimi_imt_rec">e93694ab0f279b8062b6e64be1050e59</sys_package>
         <sys_policy/>
@@ -97,7 +99,7 @@
         <sys_scope display_value="IMT Recognition">e93694ab0f279b8062b6e64be1050e59</sys_scope>
         <sys_update_name>sc_cat_item_producer_33fd0046db5da38041489806b99619e6</sys_update_name>
         <sys_updated_by>isabellee</sys_updated_by>
-        <sys_updated_on>2018-10-26 20:35:03</sys_updated_on>
+        <sys_updated_on>2019-01-29 23:01:23</sys_updated_on>
         <table_name>x_thimi_imt_rec_imt_recognition</table_name>
         <template/>
         <type>item</type>
@@ -151,6 +153,7 @@
     </fx_price>
     <sys_attachment action="INSERT_OR_UPDATE">
         <average_image_color>#3d3d3d</average_image_color>
+        <chunk_size_bytes/>
         <compressed>true</compressed>
         <content_type>image/jpeg</content_type>
         <encryption_context/>
@@ -159,6 +162,7 @@
         <image_width>168</image_width>
         <size_bytes>19018</size_bytes>
         <size_compressed>9560</size_compressed>
+        <state/>
         <sys_created_by>isabellee</sys_created_by>
         <sys_created_on>2018-10-23 04:05:50</sys_created_on>
         <sys_id>408e4446db5da38041489806b9961922</sys_id>
@@ -215,6 +219,7 @@
     </sys_attachment_doc>
     <sys_attachment action="INSERT_OR_UPDATE">
         <average_image_color>#3d3d3d</average_image_color>
+        <chunk_size_bytes/>
         <compressed>true</compressed>
         <content_type>image/jpeg</content_type>
         <encryption_context/>
@@ -223,6 +228,7 @@
         <image_width>168</image_width>
         <size_bytes>19018</size_bytes>
         <size_compressed>9560</size_compressed>
+        <state/>
         <sys_created_by>isabellee</sys_created_by>
         <sys_created_on>2018-10-23 04:06:05</sys_created_on>
         <sys_id>f78ec446db5da38041489806b9961974</sys_id>

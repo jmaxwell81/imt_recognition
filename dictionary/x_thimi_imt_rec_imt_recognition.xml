@@ -1,37 +1,58 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<database>
+<?xml version="1.0" encoding="UTF-8"?><database>
     <element audit="true" label="I&amp;MT Recognitions" max_length="40" name="x_thimi_imt_rec_imt_recognition" type="collection">
         <element label="Department" max_length="32" name="department" reference="cmn_department" type="reference"/>
         <element label="Description" max_length="4000" name="description" type="string"/>
         <element label="Employee" max_length="32" name="employee" reference="sys_user" type="reference"/>
         <element choice="1" label="Key Result" max_length="40" name="key_result" type="choice">
             <choice>
-                <element label="Digital Trust" sequence="0" value="Digital Trust"/>
-                <element label="Efficiency" sequence="1" value="Efficiency"/>
-                <element label="Engagement" sequence="2" value="Engagement"/>
-                <element label="Innovation" sequence="3" value="Innovation"/>
-                <element label="Operations" sequence="4" value="Operations"/>
-                <element label="Service Delivery" sequence="5" value="Service Delivery"/>
+                <element inactive_on_update="false" label="Digital Trust" sequence="0" value="Digital Trust"/>
+                <element inactive_on_update="false" label="Efficiency" sequence="1" value="Efficiency"/>
+                <element inactive_on_update="false" label="Engagement" sequence="2" value="Engagement"/>
+                <element inactive_on_update="false" label="Innovation" sequence="3" value="Innovation"/>
+                <element inactive_on_update="false" label="Operations" sequence="4" value="Operations"/>
+                <element inactive_on_update="false" label="Service Delivery" sequence="5" value="Service Delivery"/>
             </choice>
         </element>
         <element label="Nominator" max_length="32" name="nominator" reference="sys_user" type="reference"/>
         <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" type="string"/>
+        <element label="Participation record" max_length="32" name="participation_record" reference="x_thimi_imt_rec_imt_recognition" type="reference"/>
         <element label="Points" max_length="40" name="points" type="integer"/>
+        <element label="Prize" max_length="32" name="prize" reference="sc_cat_item" type="reference"/>
+        <element label="Quarter award" max_length="40" name="quarter_award" type="boolean"/>
+        <element label="Spot recognition award" max_length="32" name="spot_recognition_award" reference="x_thimi_spot_recog_spot_recognition_award" type="reference"/>
         <element choice="1" label="Submission type" max_length="40" name="sub_type" type="string">
             <choice>
-                <element label="Recognition" sequence="0" value="Recognition"/>
-                <element label="Participation" sequence="1" value="Participation"/>
-                <element label="Redemption" sequence="2" value="Redemption"/>
+                <element inactive_on_update="false" label="Recognition" sequence="0" value="Recognition"/>
+                <element inactive_on_update="false" label="Participation" sequence="1" value="Participation"/>
+                <element inactive_on_update="false" label="Redemption" sequence="2" value="Redemption"/>
+                <element inactive_on_update="false" label="Team Recognition" sequence="3" value="Team Recognition"/>
+                <element inactive_on_update="false" label="Team Participation" sequence="4" value="Team Participation"/>
+            </choice>
+        </element>
+        <element attributes="edge_encryption_enabled=true" choice="1" label="Treat" max_length="40" name="treat" type="string">
+            <choice>
+                <element inactive_on_update="false" label="Bagels" sequence="0" value="Bagels"/>
+                <element inactive_on_update="false" label="Cupcakes" sequence="1" value="Cupcakes"/>
+                <element inactive_on_update="false" label="Donuts" sequence="2" value="Donuts"/>
             </choice>
         </element>
         <index name="index">
-            <element name="department"/>
+            <element name="participation_record"/>
         </index>
         <index name="index2">
-            <element name="employee"/>
+            <element name="department"/>
         </index>
         <index name="index3">
+            <element name="employee"/>
+        </index>
+        <index name="index4">
+            <element name="spot_recognition_award"/>
+        </index>
+        <index name="index5">
             <element name="nominator"/>
+        </index>
+        <index name="index6">
+            <element name="prize"/>
         </index>
     </element>
 </database>

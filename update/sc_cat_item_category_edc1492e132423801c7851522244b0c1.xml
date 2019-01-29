@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<record_update table="sc_cat_item_category">
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sc_cat_item_category">
     <sc_cat_item_category action="INSERT_OR_UPDATE">
         <sc_cat_item display_value="Hand Car Wash">61c1c12e132423801c7851522244b05f</sc_cat_item>
         <sc_category display_value="Parking">2fe29f910f3f9f8062b6e64be1050e9f</sc_category>

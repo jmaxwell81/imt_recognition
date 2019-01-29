@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="m2m_sp_page_uc_can_view">
+    <m2m_sp_page_uc_can_view action="INSERT_OR_UPDATE">
+        <sp_page display_value="rec_reports">2722016e0f08630062b6e64be1050eb2</sp_page>
+        <sys_class_name>m2m_sp_page_uc_can_view</sys_class_name>
+        <sys_created_by>isabellee</sys_created_by>
+        <sys_created_on>2019-01-29 23:27:02</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>dd1485b90f9fe74062b6e64be1050ef5</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>rec_reports.Roles : x_thimi_imt_rec.imt_recognition_admin</sys_name>
+        <sys_package display_value="IMT Recognition" source="x_thimi_imt_rec">e93694ab0f279b8062b6e64be1050e59</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="IMT Recognition">e93694ab0f279b8062b6e64be1050e59</sys_scope>
+        <sys_update_name>m2m_sp_page_uc_can_view_dd1485b90f9fe74062b6e64be1050ef5</sys_update_name>
+        <sys_updated_by>isabellee</sys_updated_by>
+        <sys_updated_on>2019-01-29 23:27:02</sys_updated_on>
+        <user_criteria display_value="Roles : x_thimi_imt_rec.imt_recognition_admin">ddcfac4e0f9aa30062b6e64be1050e67</user_criteria>
+    </m2m_sp_page_uc_can_view>
+</record_update>

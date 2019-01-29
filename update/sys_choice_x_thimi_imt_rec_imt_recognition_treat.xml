@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_choice action="INSERT_OR_UPDATE" field="treat" table="x_thimi_imt_rec_imt_recognition" version="3">
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>treat</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Bagels</label>
+            <language>en</language>
+            <name>x_thimi_imt_rec_imt_recognition</name>
+            <sequence>0</sequence>
+            <sys_created_by>isabellee</sys_created_by>
+            <sys_created_on>2019-01-23 21:23:03</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_id>262ea1fb0f83a34062b6e64be1050edf</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>isabellee</sys_updated_by>
+            <sys_updated_on>2019-01-23 21:23:03</sys_updated_on>
+            <u_notes/>
+            <value>Bagels</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>treat</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Cupcakes</label>
+            <language>en</language>
+            <name>x_thimi_imt_rec_imt_recognition</name>
+            <sequence>1</sequence>
+            <sys_created_by>isabellee</sys_created_by>
+            <sys_created_on>2019-01-23 21:23:03</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_id>662ea1fb0f83a34062b6e64be1050ee0</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>isabellee</sys_updated_by>
+            <sys_updated_on>2019-01-23 21:23:03</sys_updated_on>
+            <u_notes/>
+            <value>Cupcakes</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>treat</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Donuts</label>
+            <language>en</language>
+            <name>x_thimi_imt_rec_imt_recognition</name>
+            <sequence>2</sequence>
+            <sys_created_by>isabellee</sys_created_by>
+            <sys_created_on>2019-01-23 21:23:03</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_id>e22ea1fb0f83a34062b6e64be1050ee1</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>isabellee</sys_updated_by>
+            <sys_updated_on>2019-01-23 21:23:03</sys_updated_on>
+            <u_notes/>
+            <value>Donuts</value>
+        </sys_choice>
+        <sys_choice_set action="INSERT_OR_UPDATE">
+            <element>treat</element>
+            <name>x_thimi_imt_rec_imt_recognition</name>
+            <sys_class_name>sys_choice_set</sys_class_name>
+            <sys_created_by>isabellee</sys_created_by>
+            <sys_created_on>2019-01-23 21:23:03</sys_created_on>
+            <sys_customer_update>false</sys_customer_update>
+            <sys_id>6e2ea1fb0f83a34062b6e64be1050edf</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>treat</sys_name>
+            <sys_package display_value="IMT Recognition" source="x_thimi_imt_rec">e93694ab0f279b8062b6e64be1050e59</sys_package>
+            <sys_policy/>
+            <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+            <sys_scope display_value="IMT Recognition">e93694ab0f279b8062b6e64be1050e59</sys_scope>
+            <sys_update_name>sys_choice_x_thimi_imt_rec_imt_recognition_treat</sys_update_name>
+            <sys_updated_by>isabellee</sys_updated_by>
+            <sys_updated_on>2019-01-23 21:23:03</sys_updated_on>
+        </sys_choice_set>
+    </sys_choice>
+</record_update>

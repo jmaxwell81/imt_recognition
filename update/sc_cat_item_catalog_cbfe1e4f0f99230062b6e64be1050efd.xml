@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<record_update table="sc_cat_item_catalog">
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sc_cat_item_catalog">
     <sc_cat_item_catalog action="INSERT_OR_UPDATE">
         <sc_cat_item display_value="Google Home Mini">413c48c2db5da38041489806b996196c</sc_cat_item>
         <sc_catalog display_value="IMT Recognition Catalog">8679ad001373d7c01c7851522244b046</sc_catalog>

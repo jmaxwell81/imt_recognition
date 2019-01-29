@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<record_update table="sc_cat_item_producer">
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sc_cat_item_producer">
     <sc_cat_item_producer action="INSERT_OR_UPDATE">
         <active>true</active>
         <availability>on_desktop</availability>
@@ -11,11 +10,12 @@
         <delivery_plan/>
         <delivery_plan_script/>
         <delivery_time>1970-01-03 00:00:00</delivery_time>
-        <description><![CDATA[<p><span style="font-size: 16px; font-weight: 400;">Case in for an additional chance to win some great prizes during our Holiday Party Raffle!</span></p>
-<p class="text-primary"><span style="font-size: 20px;">5 pts</span></p>
+        <description><![CDATA[<p><span style="font-size: 16px; font-weight: 400;">Cash in for an additional chance to win some great prizes during our Holiday Party Raffle!</span></p>
+<p class="text-primary"><span style="font-size: 20px;">5&nbsp;pts</span></p>
 <p><span style="font-size: 14px; font-weight: 200;"><em>Redeem tickets at any time. Raffle tickets will be provided to you the day of the Holiday Party.</em></span></p>]]></description>
         <entitlement_script/>
         <group/>
+        <hide_sp>false</hide_sp>
         <icon/>
         <ignore_price>false</ignore_price>
         <image/>
@@ -37,8 +37,9 @@
         <order>2</order>
         <ordered_item_link/>
         <picture/>
+        <post_insert_script/>
         <preview>JavaScript: popupOpenStandard("com.glideapp.servicecatalog_cat_item_view.do?v=1&amp;sysparm_id=a9b0cd2a132423801c7851522244b05d&amp;sysparm_preview=true", "summary");</preview>
-        <price>3</price>
+        <price>5</price>
         <recurring_frequency/>
         <recurring_price>0</recurring_price>
         <redirect_url>generated_record</redirect_url>
@@ -54,6 +55,7 @@
 	current.sub_type = 'Redemption';
 	current.employee = gs.getUserID();
 	current.points = 0 - rp.price;
+	current.prize = rpId;
 	current.description = rp.name;
 	var userRec = new GlideRecord('sys_user');
 	if (userRec.get(gs.getUserID())) {
@@ -89,7 +91,7 @@
         <sys_created_on>2018-09-17 14:15:05</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>a9b0cd2a132423801c7851522244b05d</sys_id>
-        <sys_mod_count>15</sys_mod_count>
+        <sys_mod_count>24</sys_mod_count>
         <sys_name>Holiday Party Raffle Ticket</sys_name>
         <sys_package display_value="IMT Recognition" source="x_thimi_imt_rec">e93694ab0f279b8062b6e64be1050e59</sys_package>
         <sys_policy/>
@@ -97,7 +99,7 @@
         <sys_scope display_value="IMT Recognition">e93694ab0f279b8062b6e64be1050e59</sys_scope>
         <sys_update_name>sc_cat_item_producer_a9b0cd2a132423801c7851522244b05d</sys_update_name>
         <sys_updated_by>isabellee</sys_updated_by>
-        <sys_updated_on>2018-10-26 23:27:59</sys_updated_on>
+        <sys_updated_on>2019-01-29 23:03:06</sys_updated_on>
         <table_name>x_thimi_imt_rec_imt_recognition</table_name>
         <template/>
         <type>item</type>
@@ -116,19 +118,19 @@
     <sys_translated_text action="delete_multiple" query="documentkey=a9b0cd2a132423801c7851522244b05d"/>
     <fx_price action="delete_multiple" query="id=a9b0cd2a132423801c7851522244b05d"/>
     <fx_price action="INSERT_OR_UPDATE">
-        <amount>3</amount>
+        <amount>5</amount>
         <currency display_value="USD">USD</currency>
         <field>price</field>
         <id>a9b0cd2a132423801c7851522244b05d</id>
         <parent/>
-        <reference_amount>3</reference_amount>
+        <reference_amount>5</reference_amount>
         <reference_currency display_value="USD">USD</reference_currency>
         <sys_created_by>rbeeman</sys_created_by>
         <sys_created_on>2018-09-17 14:15:05</sys_created_on>
         <sys_id>61b0cd2a132423801c7851522244b05f</sys_id>
-        <sys_mod_count>4</sys_mod_count>
+        <sys_mod_count>5</sys_mod_count>
         <sys_updated_by>isabellee</sys_updated_by>
-        <sys_updated_on>2018-10-26 23:27:59</sys_updated_on>
+        <sys_updated_on>2019-01-28 22:20:20</sys_updated_on>
         <table>sc_cat_item_producer</table>
         <type>calculated</type>
     </fx_price>
@@ -151,6 +153,7 @@
     </fx_price>
     <sys_attachment action="INSERT_OR_UPDATE">
         <average_image_color>#3c3c3c</average_image_color>
+        <chunk_size_bytes/>
         <compressed>true</compressed>
         <content_type>image/jpeg</content_type>
         <encryption_context/>
@@ -159,6 +162,7 @@
         <image_width>168</image_width>
         <size_bytes>9229</size_bytes>
         <size_compressed>7728</size_compressed>
+        <state/>
         <sys_created_by>isabellee</sys_created_by>
         <sys_created_on>2018-10-26 23:15:26</sys_created_on>
         <sys_id>05623b4b0fdd230062b6e64be1050e62</sys_id>
@@ -206,6 +210,7 @@
     </sys_attachment_doc>
     <sys_attachment action="INSERT_OR_UPDATE">
         <average_image_color>#3c3c3c</average_image_color>
+        <chunk_size_bytes/>
         <compressed>true</compressed>
         <content_type>image/jpeg</content_type>
         <encryption_context/>
@@ -214,6 +219,7 @@
         <image_width>168</image_width>
         <size_bytes>9229</size_bytes>
         <size_compressed>7728</size_compressed>
+        <state/>
         <sys_created_by>isabellee</sys_created_by>
         <sys_created_on>2018-10-26 23:16:11</sys_created_on>
         <sys_id>5492378b0fdd230062b6e64be1050e72</sys_id>

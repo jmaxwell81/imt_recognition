@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<record_update table="m2m_sp_widget_dependency">
+<?xml version="1.0" encoding="UTF-8"?><record_update table="m2m_sp_widget_dependency">
     <m2m_sp_widget_dependency action="INSERT_OR_UPDATE">
         <sp_dependency display_value="angular.dirPagination">eecb9cf10fbbdf8062b6e64be1050ee0</sp_dependency>
         <sp_widget display_value="Recognition My Prizes">bf968ee20f4c630062b6e64be1050e64</sp_widget>

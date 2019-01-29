@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl_role">
+    <sys_security_acl_role action="INSERT_OR_UPDATE">
+        <sys_class_name>sys_security_acl_role</sys_class_name>
+        <sys_created_by>isabellee</sys_created_by>
+        <sys_created_on>2019-01-29 23:31:34</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>44058db90f9fe74062b6e64be1050e07</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_thimi_imt_rec_imt_recognition.x_thimi_imt_rec.imt_recognition_admin</sys_name>
+        <sys_package display_value="IMT Recognition" source="x_thimi_imt_rec">e93694ab0f279b8062b6e64be1050e59</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="IMT Recognition">e93694ab0f279b8062b6e64be1050e59</sys_scope>
+        <sys_security_acl display_value="x_thimi_imt_rec_imt_recognition">faa8673b13ab97c01c7851522244b0c6</sys_security_acl>
+        <sys_update_name>sys_security_acl_role_44058db90f9fe74062b6e64be1050e07</sys_update_name>
+        <sys_updated_by>isabellee</sys_updated_by>
+        <sys_updated_on>2019-01-29 23:31:34</sys_updated_on>
+        <sys_user_role display_value="x_thimi_imt_rec.imt_recognition_admin" name="x_thimi_imt_rec.imt_recognition_admin">6951ab7313ab97c01c7851522244b056</sys_user_role>
+        <transaction_id/>
+    </sys_security_acl_role>
+</record_update>

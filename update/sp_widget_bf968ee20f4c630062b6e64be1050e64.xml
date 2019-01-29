@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<record_update table="sp_widget">
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
     <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
         <client_script><![CDATA[function($scope) {
 
 	/* widget controller */
@@ -122,7 +122,7 @@ input {
 			empName: recs.employee.name.toString(),
 			empDept: recs.employee.department.getDisplayValue(),
 			empId: recs.employee.sys_id.toString(),
-			prize: recs.description.toString(),
+			prize: recs.prize.name.toString(),
 			date: date,
 			searchDate: date.toLocaleDateString()
 		};
@@ -140,15 +140,15 @@ input {
         <sys_created_on>2018-08-23 22:49:07</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>bf968ee20f4c630062b6e64be1050e64</sys_id>
-        <sys_mod_count>14</sys_mod_count>
+        <sys_mod_count>16</sys_mod_count>
         <sys_name>Recognition My Prizes</sys_name>
         <sys_package display_value="IMT Recognition" source="x_thimi_imt_rec">e93694ab0f279b8062b6e64be1050e59</sys_package>
         <sys_policy/>
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="IMT Recognition">e93694ab0f279b8062b6e64be1050e59</sys_scope>
         <sys_update_name>sp_widget_bf968ee20f4c630062b6e64be1050e64</sys_update_name>
-        <sys_updated_by>rbeeman</sys_updated_by>
-        <sys_updated_on>2018-10-26 18:38:38</sys_updated_on>
+        <sys_updated_by>isabellee</sys_updated_by>
+        <sys_updated_on>2019-01-29 22:47:03</sys_updated_on>
         <template><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <div>

@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<record_update table="sys_script_email">
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_email">
     <sys_script_email action="INSERT_OR_UPDATE">
         <name>Prize Redeem - Notify Manager</name>
         <new_lines_to_html>false</new_lines_to_html>
@@ -7,10 +6,11 @@
           /* Optional EmailOutbound */ email, /* Optional GlideRecord */ email_action,
           /* Optional GlideRecord */ event) {
 
-	var brkmgr = '2-hour Early Departure / Late Arrival'; 
-	var twohr = 'Breakfast from your Manager';
+	var EARLY = '0202092e132423801c7851522244b07f'; //Early Friday sys_id
+	var LATE = '5f91852e132423801c7851522244b0ba'; //Late Friday sys_id
+	var BREAKFAST = 'bebfdbd90f3f9f8062b6e64be1050e98'; //Breakfast from your Manager sys_id
 	
-	if (current.description == brkmgr || current.description == twohr){
+	if (current.prize == BREAKFAST || current.prize == EARLY || current.prize == LATE){
 		email.addAddress('cc', current.employee.manager.email.toString(), current.employee.manager.name.toString());
 	}	
 
@@ -20,7 +20,7 @@
         <sys_created_on>2018-10-24 21:43:05</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>0dd605a2db51278041489806b99619f5</sys_id>
-        <sys_mod_count>7</sys_mod_count>
+        <sys_mod_count>9</sys_mod_count>
         <sys_name>Prize Redeem - Notify Manager</sys_name>
         <sys_package display_value="IMT Recognition" source="x_thimi_imt_rec">e93694ab0f279b8062b6e64be1050e59</sys_package>
         <sys_policy/>
@@ -28,6 +28,6 @@
         <sys_scope display_value="IMT Recognition">e93694ab0f279b8062b6e64be1050e59</sys_scope>
         <sys_update_name>sys_script_email_0dd605a2db51278041489806b99619f5</sys_update_name>
         <sys_updated_by>isabellee</sys_updated_by>
-        <sys_updated_on>2018-10-25 18:24:23</sys_updated_on>
+        <sys_updated_on>2019-01-29 18:40:07</sys_updated_on>
     </sys_script_email>
 </record_update>

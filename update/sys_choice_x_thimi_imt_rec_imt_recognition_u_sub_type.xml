@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<record_update>
+<?xml version="1.0" encoding="UTF-8"?><record_update>
     <sys_choice action="INSERT_OR_UPDATE" field="u_sub_type" table="x_thimi_imt_rec_imt_recognition" version="3">
         <sys_choice action="INSERT_OR_UPDATE">
             <dependent_value/>
@@ -65,7 +64,7 @@
             <sys_created_by>isabellee</sys_created_by>
             <sys_created_on>2018-08-03 22:20:55</sys_created_on>
             <sys_customer_update>false</sys_customer_update>
-            <sys_id>6b508bcc1337d7c01c7851522244b0d6</sys_id>
+            <sys_id>d91909e0dbe92b04c2abf2f5ab9619c8</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_name>u_sub_type</sys_name>
             <sys_package display_value="IMT Recognition" source="x_thimi_imt_rec">e93694ab0f279b8062b6e64be1050e59</sys_package>
