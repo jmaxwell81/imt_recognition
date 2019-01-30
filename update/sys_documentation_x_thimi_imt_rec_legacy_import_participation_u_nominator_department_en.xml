@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_documentation element="u_nominator_department" label="Nominator Department" language="en" table="x_thimi_imt_rec_legacy_import_participation">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>u_nominator_department</element>
+            <help/>
+            <hint/>
+            <label>Nominator Department</label>
+            <language>en</language>
+            <name>x_thimi_imt_rec_legacy_import_participation</name>
+            <plural>Nominator Departments</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>isabellee</sys_created_by>
+            <sys_created_on>2019-01-30 15:55:34</sys_created_on>
+            <sys_customer_update>false</sys_customer_update>
+            <sys_id>b156204e0f5b2b4062b6e64be1050e0a</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>Nominator Department</sys_name>
+            <sys_package display_value="IMT Recognition" source="x_thimi_imt_rec">e93694ab0f279b8062b6e64be1050e59</sys_package>
+            <sys_policy/>
+            <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+            <sys_scope display_value="IMT Recognition">e93694ab0f279b8062b6e64be1050e59</sys_scope>
+            <sys_update_name>sys_documentation_x_thimi_imt_rec_legacy_import_participation_u_nominator_department_en</sys_update_name>
+            <sys_updated_by>isabellee</sys_updated_by>
+            <sys_updated_on>2019-01-30 15:55:34</sys_updated_on>
+            <u_notes/>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>
