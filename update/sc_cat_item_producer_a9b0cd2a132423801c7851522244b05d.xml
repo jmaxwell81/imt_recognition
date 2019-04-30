@@ -14,6 +14,7 @@
 <p class="text-primary"><span style="font-size: 20px;">5&nbsp;pts</span></p>
 <p><span style="font-size: 14px; font-weight: 200;"><em>Redeem tickets at any time. Raffle tickets will be provided to you the day of the Holiday Party.</em></span></p>]]></description>
         <entitlement_script/>
+        <flow_designer_flow/>
         <group/>
         <hide_sp>false</hide_sp>
         <icon/>

@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function($scope, $window, spUtil, $timeout) {
+	/* widget controller */
+	var c = this;
+	c.data.user = {};
+	c.completed = true;
+	c.submitted = false;
+
+	$scope.user = {
+		displayValue: c.data.user.name,
+		value: c.data.user.sys_id,
+		name: 'user'
+	};
+
+	$scope.$on("field.change", function(event, data) {
+		if (data.field.name == 'user') {
+			c.data.userId = data.newValue;
+			c.server.get({
+				action: 'getUser',
+				userId: data.newValue
+			}).then(function(r) {
+				var dept = r.data.userInfo.department,
+						mngr = r.data.userInfo.manager;
+				c.data.department = dept ? dept : 'N/A';
+				c.data.manager = mngr ? mngr : 'N/A';
+			});
+		}
+	});
+
+
+	c.submitForm = function(isValid) {
+		if (isValid){
+			c.submitted = true;
+			c.server.get({
+				action: 'submitForm',
+				userId: c.data.userId,
+				//keyResult: c.data.keyResult.value,
+				legendaryRecognition: c.data.legendaryRecognition,
+				legendaryKeyResult: c.data.legendaryKeyResult,
+				nominate: c.data.nominate
+			}).then(function(r) {
+				$timeout(function() {
+					$window.location.href="?id=rec_list";
+				}, 2500, false);
+			});	
+		} else {
+			spUtil.addErrorMessage('Please complete the required fields');
+		}
+	}; 
+}
+
+]]></client_script>
+        <controller_as>c</controller_as>
+        <css>form {
+  margin-top: 20px;
+  font-size: 14.4px;
+}
+
+input, textarea, select {
+  width: 100%;
+  padding: 5px;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 4px;
+  border-color: rgb(189, 192, 196);
+}
+
+input, select, .select2-choice {
+  margin-bottom: 15px;
+}
+
+textarea {
+  resize: vertical;
+}
+
+#nominate {
+  margin-top: inherit;
+  width: 20px;
+}
+
+#nominate2 {
+  position: relative !important;
+  top: -2.5px;
+}
+
+button {
+  margin-top: 15px;
+}
+
+.required::before {
+	content: '*';
+  color: red;
+  margin-right: 2px;
+}
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>recognition_legend_form</id>
+        <internal>false</internal>
+        <link/>
+        <name>Recognition Legend Form</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+	var nomineePts = 5,
+			nominatorPts = 1,
+			maxPts = 50;
+
+	/* populate the 'data' object */
+	/* e.g., data.table = $sp.getValue('table'); */
+	/*data.keyResults = [];
+	var keyResultsGR = new GlideRecord('sys_choice');
+	keyResultsGR.addQuery('name', 'x_thimi_imt_rec_imt_recognition');
+	keyResultsGR.addQuery('element', 'key_result');
+	keyResultsGR.addQuery('inactive', false);
+	keyResultsGR.query();
+	while (keyResultsGR.next()) {
+		var kRes = {};
+		kRes.name = keyResultsGR.label.toString();
+		kRes.value = keyResultsGR.value.toString();
+		data.keyResults.push(kRes); 
+	}*/
+
+	data.recognizerId = gs.getUserID();
+
+	if (input) {
+		if (input.action == 'getUser') {
+			var userGR = new GlideRecord('sys_user');
+			if (userGR.get(input.userId)) {
+				data.userInfo = {};
+				$sp.getRecordDisplayValues(data.userInfo, userGR, 'sys_id,manager,department');
+			}
+		}
+		if (input.action == 'submitForm') {
+			var empRec = createNomineeRecord();
+			createNomatorRecord(empRec.sys_id);
+			gs.addInfoMessage('Thank you for your recognition.');
+		}
+	}
+
+	function createNomineeRecord() {
+		var userId = input.userId,
+				points = getPtsToAdd(userId, nomineePts),
+				empRec = new GlideRecord('x_thimi_imt_rec_imt_recognition');
+		empRec.newRecord();
+		empRec.sub_type = 'Legendary Recognition';
+		empRec.nominator = gs.getUserID();
+		empRec.employee = userId;
+		var userRec = new GlideRecord('sys_user');
+		if (userRec.get(userId)) {
+			empRec.department = userRec.department;
+		}
+		//empRec.key_result = input.keyResult;
+		empRec.description = 'What did the team member do?\n' + input.legendaryRecognition + '\n\nHow did the team member demonstrate our team values?\n' + input.legendaryKeyResult;
+		if (userRec.u_employee == true){
+			empRec.points = points;
+		}
+		empRec.insert();
+		return empRec;
+	}
+
+	function createNomatorRecord(sys_id) {
+		var nomRec,
+				userId = gs.getUserID(),
+				points = getPtsToAdd(userId, nominatorPts),
+				empRec = new GlideRecord('x_thimi_imt_rec_imt_recognition');
+		empRec.newRecord();
+		empRec.sub_type = 'Participation';
+		empRec.employee = userId;
+		var userRec = new GlideRecord('sys_user');
+		if (userRec.get(userId)) {
+			empRec.department = userRec.department;
+		}		
+		if (userRec.u_employee == true){
+		empRec.points = points;
+		}
+		nomRec = empRec.insert();
+		var updateRef = new GlideRecord('x_thimi_imt_rec_imt_recognition');
+		updateRef.addQuery('sys_id', sys_id);
+		updateRef.query();
+		while (updateRef.next()) {
+		updateRef.participation_record = nomRec;
+		updateRef.update(); 
+		}
+	}
+	
+	function getPtsToAdd(userId, newPoints) {
+		var myPoints = 0,
+				recGr = new GlideRecord('x_thimi_imt_rec_imt_recognition');
+		recGr.addQuery('employee', userId);
+		recGr.query();
+		while (recGr.next()) {
+			myPoints += recGr.points;
+		}
+		var newTotal = myPoints + newPoints;
+		return (newTotal > maxPts) ? (maxPts - myPoints) : (newPoints);
+	}
+
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>isabellee</sys_created_by>
+        <sys_created_on>2019-04-18 23:14:30</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>ffc6b70b0fb07f0062b6e64be1050e9e</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>Recognition Legend Form</sys_name>
+        <sys_package display_value="IMT Recognition" source="x_thimi_imt_rec">e93694ab0f279b8062b6e64be1050e59</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="IMT Recognition">e93694ab0f279b8062b6e64be1050e59</sys_scope>
+        <sys_update_name>sp_widget_ffc6b70b0fb07f0062b6e64be1050e9e</sys_update_name>
+        <sys_updated_by>isabellee</sys_updated_by>
+        <sys_updated_on>2019-04-23 19:02:52</sys_updated_on>
+        <template><![CDATA[<div>
+    <form name='giveRec' ng-submit="c.submitForm(giveRec.$valid)" ng-show="c.completed" novalidate>
+        <label for='user' class="required">Select Member</label>
+        <sn-record-picker id="user" name="user" field="user" table="'sys_user'" display-field="'name'" value-field="'sys_id'" search-fields="'name'" page-size="100" default-query="'sys_id!=' + c.data.recognizerId + '^active=true^u_employee=true^u_lob=Corporate - IT'" required>
+        </sn-record-picker>
+        <label for='department'>Nominee's Department</label>
+        <input id='department' name='department' type='text' ng-model='c.data.department' disabled><br>
+        <label for='manager'>Nominee's Manager</label>
+        <input id='manager' name='manager' type='text' ng-model='c.data.manager' disabled><br>
+        <label for='legendary_recognition' class='required'>What did the team member do? Give details. </label>
+        <textarea id='legendary_recognition' rows='4' ng-model='c.data.legendaryRecognition' required></textarea><br>
+        <label for='legendary_key_result' class='required'>How did the team member demonstrate our team values? (OZ Principle, Goal Cards, L.E.A.D) </label>
+        <textarea id='legendary_key_result' rows='4' ng-model='c.data.legendaryKeyResult' required></textarea><br>
+        <button type='submit' class='btn btn-danger pull-right' ng-disabled="giveRec.$invalid || c.submitted">Submit</button>
+    </form>
+</div>]]></template>
+    </sp_widget>
+</record_update>

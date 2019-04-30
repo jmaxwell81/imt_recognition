@@ -2,9 +2,9 @@
     <sp_instance_link action="INSERT_OR_UPDATE">
         <active>true</active>
         <class_name/>
-        <color>primary</color>
+        <color>default</color>
         <css/>
-        <glyph>user</glyph>
+        <glyph/>
         <id/>
         <kb_article/>
         <kb_category/>
@@ -13,33 +13,28 @@
         <roles/>
         <sc_cat_item/>
         <sc_category/>
-        <short_description>Send a team member $25 and 5 points for demonstrating a key result</short_description>
+        <short_description/>
         <size>md</size>
-        <sp_column display_value="1">b1f3093b138b63401c7851522244b0c2</sp_column>
-        <sp_page display_value="rec_give">aaa7d8a30f679b8062b6e64be1050ec3</sp_page>
-        <sp_widget display_value="Icon Link">3caa67afcb13020000f8d856634c9c2e</sp_widget>
+        <sp_column display_value="1">f3c82afe0ffcfb0062b6e64be1050e69</sp_column>
+        <sp_page/>
+        <sp_widget display_value="Recognition Icon Link">bff5223e0ffcfb0062b6e64be1050e10</sp_widget>
         <sys_class_name>sp_instance_link</sys_class_name>
         <sys_created_by>rbeeman</sys_created_by>
-        <sys_created_on>2019-01-23 18:18:51</sys_created_on>
+        <sys_created_on>2019-04-17 22:55:20</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
-        <sys_id>a004093b138b63401c7851522244b0ff</sys_id>
-        <sys_mod_count>8</sys_mod_count>
-        <sys_name>Shout Out an Individual</sys_name>
+        <sys_id>59d8a6fe0ffcfb0062b6e64be1050e6e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
         <sys_package display_value="IMT Recognition" source="x_thimi_imt_rec">e93694ab0f279b8062b6e64be1050e59</sys_package>
         <sys_policy/>
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="IMT Recognition">e93694ab0f279b8062b6e64be1050e59</sys_scope>
-        <sys_update_name>sp_instance_link_a004093b138b63401c7851522244b0ff</sys_update_name>
+        <sys_update_name>sp_instance_link_59d8a6fe0ffcfb0062b6e64be1050e6e</sys_update_name>
         <sys_updated_by>rbeeman</sys_updated_by>
-        <sys_updated_on>2019-01-23 19:04:35</sys_updated_on>
-        <title>Shout Out an Individual</title>
+        <sys_updated_on>2019-04-17 22:55:20</sys_updated_on>
+        <title/>
         <type>page</type>
         <url/>
-        <widget_parameters><![CDATA[{
-	"link_template": {
-		"value": "",
-		"displayValue": ""
-	}
-}]]></widget_parameters>
+        <widget_parameters/>
     </sp_instance_link>
 </record_update>

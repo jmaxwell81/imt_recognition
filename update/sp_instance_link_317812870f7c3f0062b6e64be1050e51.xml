@@ -2,9 +2,9 @@
     <sp_instance_link action="INSERT_OR_UPDATE">
         <active>true</active>
         <class_name/>
-        <color>danger</color>
+        <color>primary</color>
         <css/>
-        <glyph>heart-o</glyph>
+        <glyph>user</glyph>
         <id/>
         <kb_article/>
         <kb_category/>
@@ -13,32 +13,36 @@
         <roles/>
         <sc_cat_item/>
         <sc_category/>
-        <short_description/>
+        <short_description>For a quick show of appreciation to any team member</short_description>
         <size>md</size>
-        <sp_column display_value="3">c149f09d0f07ab0062b6e64be1050e88</sp_column>
-        <sp_page display_value="rec_list">33dc7d4c0ffbdb8062b6e64be1050e95</sp_page>
-        <sp_widget display_value="Icon Link">3caa67afcb13020000f8d856634c9c2e</sp_widget>
+        <sp_column display_value="1">8045e2030fbc3f0062b6e64be1050e47</sp_column>
+        <sp_page display_value="rec_give">aaa7d8a30f679b8062b6e64be1050ec3</sp_page>
+        <sp_widget display_value="Recognition Give Icon Link">27a15ecb0f3c3f0062b6e64be1050ec7</sp_widget>
         <sys_class_name>sp_instance_link</sys_class_name>
         <sys_created_by>isabellee</sys_created_by>
-        <sys_created_on>2019-01-15 23:10:27</sys_created_on>
+        <sys_created_on>2019-04-18 16:22:18</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
-        <sys_id>6c69709d0f07ab0062b6e64be1050e73</sys_id>
-        <sys_mod_count>5</sys_mod_count>
-        <sys_name>Recent Shout Outs</sys_name>
+        <sys_id>317812870f7c3f0062b6e64be1050e51</sys_id>
+        <sys_mod_count>8</sys_mod_count>
+        <sys_name>Shout Out an Individual</sys_name>
         <sys_package display_value="IMT Recognition" source="x_thimi_imt_rec">e93694ab0f279b8062b6e64be1050e59</sys_package>
         <sys_policy/>
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="IMT Recognition">e93694ab0f279b8062b6e64be1050e59</sys_scope>
-        <sys_update_name>sp_instance_link_6c69709d0f07ab0062b6e64be1050e73</sys_update_name>
-        <sys_updated_by>rbeeman</sys_updated_by>
-        <sys_updated_on>2019-01-23 21:06:10</sys_updated_on>
-        <title>Recent Shout Outs</title>
+        <sys_update_name>sp_instance_link_317812870f7c3f0062b6e64be1050e51</sys_update_name>
+        <sys_updated_by>isabellee</sys_updated_by>
+        <sys_updated_on>2019-04-23 18:48:53</sys_updated_on>
+        <title>Shout Out an Individual</title>
         <type>page</type>
         <url/>
         <widget_parameters><![CDATA[{
 	"link_template": {
 		"value": "Top Icon",
 		"displayValue": "Top Icon"
+	},
+	"information": {
+		"value": "",
+		"displayValue": ""
 	}
 }]]></widget_parameters>
     </sp_instance_link>

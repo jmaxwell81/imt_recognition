@@ -41,7 +41,7 @@
         <message/>
         <message_html><![CDATA[<p>Shouter: ${employee.name}</p>
 <p>${description}</p>
-<p>Treat the Team:&nbsp;${treat}</p>]]></message_html>
+<p>Treat the Team:&nbsp;${treat} ${mail_script:IMT Team Recognition Members}</p>]]></message_html>
         <message_list/>
         <message_text/>
         <name>I&amp;MT Team Recognition Received</name>
@@ -63,7 +63,7 @@
         <sys_customer_update>false</sys_customer_update>
         <sys_domain>global</sys_domain>
         <sys_id>1df3cb0813dfa3401c7851522244b0ea</sys_id>
-        <sys_mod_count>4</sys_mod_count>
+        <sys_mod_count>10</sys_mod_count>
         <sys_name>I&amp;MT Team Recognition Received</sys_name>
         <sys_overrides/>
         <sys_package display_value="IMT Recognition" source="x_thimi_imt_rec">e93694ab0f279b8062b6e64be1050e59</sys_package>
@@ -71,10 +71,10 @@
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="IMT Recognition">e93694ab0f279b8062b6e64be1050e59</sys_scope>
         <sys_update_name>sysevent_email_action_1df3cb0813dfa3401c7851522244b0ea</sys_update_name>
-        <sys_updated_by>rbeeman</sys_updated_by>
-        <sys_updated_on>2019-01-29 04:34:10</sys_updated_on>
+        <sys_updated_by>isabellee</sys_updated_by>
+        <sys_updated_on>2019-04-11 22:10:50</sys_updated_on>
         <sys_version>2</sys_version>
-        <template/>
+        <template display_value="I&amp;MT Recognition Received Notification">b9f33c9f13e0e3801c7851522244b08c</template>
         <type>email</type>
         <u_notes/>
         <user/>

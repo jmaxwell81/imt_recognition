@@ -25,15 +25,18 @@
                 <element inactive_on_update="false" label="Recognition" sequence="0" value="Recognition"/>
                 <element inactive_on_update="false" label="Participation" sequence="1" value="Participation"/>
                 <element inactive_on_update="false" label="Redemption" sequence="2" value="Redemption"/>
-                <element inactive_on_update="false" label="Team Recognition" sequence="3" value="Team Recognition"/>
-                <element inactive_on_update="false" label="Team Participation" sequence="4" value="Team Participation"/>
+                <element inactive_on_update="false" label="Team Member Recognition" sequence="3" value="Team Member Recognition"/>
+                <element inactive_on_update="false" label="Team Recognition" sequence="4" value="Team Recognition"/>
+                <element inactive_on_update="false" label="Legendary Recognition" sequence="5" value="Legendary Recognition"/>
             </choice>
         </element>
         <element attributes="edge_encryption_enabled=true" choice="1" label="Treat" max_length="40" name="treat" type="string">
             <choice>
                 <element inactive_on_update="false" label="Bagels" sequence="0" value="Bagels"/>
-                <element inactive_on_update="false" label="Cupcakes" sequence="1" value="Cupcakes"/>
+                <element inactive="true" inactive_on_update="true" label="Cupcakes" sequence="1" value="Cupcakes"/>
                 <element inactive_on_update="false" label="Donuts" sequence="2" value="Donuts"/>
+                <element inactive_on_update="false" label="Specialties Cookies" sequence="3" value="Specialties Cookies"/>
+                <element inactive_on_update="false" label="Bundt Cakes" sequence="4" value="Bundt Cakes"/>
             </choice>
         </element>
         <index name="index">

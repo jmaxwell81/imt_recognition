@@ -24,21 +24,21 @@ h4 {
         <sys_created_on>2019-01-23 21:05:09</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>d01aa93b0f83a34062b6e64be1050e01</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_mod_count>5</sys_mod_count>
         <sys_name>Welcome</sys_name>
         <sys_package display_value="IMT Recognition" source="x_thimi_imt_rec">e93694ab0f279b8062b6e64be1050e59</sys_package>
         <sys_policy/>
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="IMT Recognition">e93694ab0f279b8062b6e64be1050e59</sys_scope>
         <sys_update_name>sp_instance_d01aa93b0f83a34062b6e64be1050e01</sys_update_name>
-        <sys_updated_by>isabellee</sys_updated_by>
-        <sys_updated_on>2019-01-23 21:28:42</sys_updated_on>
+        <sys_updated_by>rbeeman</sys_updated_by>
+        <sys_updated_on>2019-04-08 20:29:13</sys_updated_on>
         <title>Welcome</title>
         <url/>
         <widget_parameters><![CDATA[{
 	"html": {
-		"value": "<h1><strong>Treat a Team</strong></h1>\n<p>Show your appreciation for a team's recent accomplishment by sending treats for them to enjoy.</p>\n<h4><strong>How it works</strong></h4>\n<p>An office admin will receive the request and choose a day/time to order and deliver the treats to the team.</p>",
-		"displayValue": "<h1><strong>Treat a Team</strong></h1>\n<p>Show your appreciation for a team's recent accomplishment by sending treats for them to enjoy.</p>\n<h4><strong>How it works</strong></h4>\n<p>An office admin will receive the request and choose a day/time to order and deliver the treats to the team.</p>"
+		"value": "<h1><strong>Treat a Team</strong></h1>\n<p>Recognize an I&amp;MT Team for a recent win by sending them a Team Shout Out!</p>\n<p>The team must include at least 3 I&amp;MT members, and tell us how the team worked together to elevate service delivery and demonstrate our key results. The team Shout Out will be sent directly to the team member and their manager, and will be promoted on our Recognition Board.</p>\n<h4><strong>How it works</strong></h4>\n<p>An office admin will receive the request and choose a day/time to order and deliver the treats to the team.</p>",
+		"displayValue": "<h1><strong>Treat a Team</strong></h1>\n<p>Recognize an I&amp;MT Team for a recent win by sending them a Team Shout Out!</p>\n<p>The team must include at least 3 I&amp;MT members, and tell us how the team worked together to elevate service delivery and demonstrate our key results. The team Shout Out will be sent directly to the team member and their manager, and will be promoted on our Recognition Board.</p>\n<h4><strong>How it works</strong></h4>\n<p>An office admin will receive the request and choose a day/time to order and deliver the treats to the team.</p>"
 	}
 }]]></widget_parameters>
     </sp_instance>

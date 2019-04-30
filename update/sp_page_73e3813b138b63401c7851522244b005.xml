@@ -1,47 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sp_page">
     <sp_page action="INSERT_OR_UPDATE">
         <category>custom</category>
-        <css>.top_icon {&#13;
-  border-style: solid;&#13;
-  border-color: LightGray;&#13;
-  border-width: 0.5px;&#13;
-  padding: 110px 20px 110px 20px !important;&#13;
-}&#13;
-&#13;
-.container_body {&#13;
-  margin: 0;&#13;
-  position: absolute;&#13;
-  top: 40%;&#13;
-  left: 50%;&#13;
-  -ms-transform: translate(-50%, -40%);&#13;
-  transform: translate(-50%, -40%);&#13;
-}&#13;
-&#13;
-.col-md-6 {&#13;
-  padding-left: 30px;&#13;
-  padding-right: 30px;&#13;
-}&#13;
-&#13;
-@media only screen and (max-width: 1199px) {&#13;
-  .top_icon {&#13;
-    border-width: 0px;&#13;
-  }&#13;
-}&#13;
-&#13;
-@media only screen and (max-width: 991px) {&#13;
-  .top_icon {&#13;
-    padding: 50px 15px 50px 15px  !important;&#13;
-  }&#13;
-}&#13;
-&#13;
-@media only screen and (max-width: 767px) {&#13;
-  .col-md-6 {&#13;
-    padding-left: 0px;&#13;
-    padding-right: 0px;&#13;
-  }&#13;
-  .top_icon {&#13;
-    padding: 15px 0px 15px 0px  !important;&#13;
-  }&#13;
+        <css>.top_icon {
+  border-style: solid;
+  border-color: LightGray;
+  border-width: 0.5px;
+  padding: 110px 30px 110px 30px !important;
+  height:369px;
+}
+
+
+
+.container_body {
+  margin: 0;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  -ms-transform: translate(-50%, -40%);
+  transform: translate(-50%, -40%);
+}
+
+.col-md-6 {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+@media only screen and (max-width: 1199px) {
+  .top_icon {
+    border-width: 0px;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .top_icon {
+    padding: 50px 15px 50px 15px  !important;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .col-md-6 {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  .top_icon {
+    padding: 15px 0px 15px 0px  !important;
+  }
 }</css>
         <draft>false</draft>
         <dynamic_title_structure/>
@@ -55,15 +58,15 @@
         <sys_created_on>2019-01-23 18:18:32</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>73e3813b138b63401c7851522244b005</sys_id>
-        <sys_mod_count>30</sys_mod_count>
+        <sys_mod_count>48</sys_mod_count>
         <sys_name>rec_shout_out</sys_name>
         <sys_package display_value="IMT Recognition" source="x_thimi_imt_rec">e93694ab0f279b8062b6e64be1050e59</sys_package>
         <sys_policy/>
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="IMT Recognition">e93694ab0f279b8062b6e64be1050e59</sys_scope>
         <sys_update_name>sp_page_73e3813b138b63401c7851522244b005</sys_update_name>
-        <sys_updated_by>rbeeman</sys_updated_by>
-        <sys_updated_on>2019-01-23 22:39:00</sys_updated_on>
+        <sys_updated_by>isabellee</sys_updated_by>
+        <sys_updated_on>2019-04-18 15:33:10</sys_updated_on>
         <title>Give a Shout Out</title>
     </sp_page>
 </record_update>

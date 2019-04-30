@@ -36,9 +36,9 @@
 			c.server.get({
 				action: 'submitForm',
 				userId: c.data.userId,
-				keyResult: c.data.keyResult.value,
+				//keyResult: c.data.keyResult.value,
 				recognition: c.data.Recognition,
-				nominate: c.data.nominate,
+				nominate: c.data.nominate
 			}).then(function(r) {
 				$timeout(function() {
 					$window.location.href="?id=rec_list";
@@ -99,7 +99,7 @@ button {
         <description/>
         <docs/>
         <field_list/>
-        <has_preview>false</has_preview>
+        <has_preview>true</has_preview>
         <id>rec-form</id>
         <internal>false</internal>
         <link/>
@@ -114,7 +114,7 @@ button {
 
 	/* populate the 'data' object */
 	/* e.g., data.table = $sp.getValue('table'); */
-	data.keyResults = [];
+	/*data.keyResults = [];
 	var keyResultsGR = new GlideRecord('sys_choice');
 	keyResultsGR.addQuery('name', 'x_thimi_imt_rec_imt_recognition');
 	keyResultsGR.addQuery('element', 'key_result');
@@ -125,7 +125,7 @@ button {
 		kRes.name = keyResultsGR.label.toString();
 		kRes.value = keyResultsGR.value.toString();
 		data.keyResults.push(kRes); 
-	}
+	}*/
 
 	data.recognizerId = gs.getUserID();
 
@@ -140,7 +140,7 @@ button {
 		if (input.action == 'submitForm') {
 			var empRec = createNomineeRecord();
 			createNomatorRecord(empRec.sys_id);
-			gs.addInfoMessage('Thank you for recognizing ' + empRec.employee.getDisplayValue());
+			gs.addInfoMessage('Thank you for your recognition.');
 		}
 	}
 
@@ -156,10 +156,11 @@ button {
 		if (userRec.get(userId)) {
 			empRec.department = userRec.department;
 		}
-		empRec.key_result = input.keyResult;
+		//empRec.key_result = input.keyResult;
 		empRec.description = input.recognition;
-		empRec.quarter_award = input.nominate;
-		empRec.points = points;
+		if (userRec.u_employee == true){
+			empRec.points = points;
+		}
 		empRec.insert();
 		return empRec;
 	}
@@ -176,7 +177,9 @@ button {
 		if (userRec.get(userId)) {
 			empRec.department = userRec.department;
 		}		
+		if (userRec.u_employee == true){
 		empRec.points = points;
+		}
 		nomRec = empRec.insert();
 		var updateRef = new GlideRecord('x_thimi_imt_rec_imt_recognition');
 		updateRef.addQuery('sys_id', sys_id);
@@ -206,7 +209,7 @@ button {
         <sys_created_on>2018-08-02 17:59:46</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>180b707f0fef9b8062b6e64be1050e2e</sys_id>
-        <sys_mod_count>208</sys_mod_count>
+        <sys_mod_count>222</sys_mod_count>
         <sys_name>Recognition Form</sys_name>
         <sys_package display_value="IMT Recognition" source="x_thimi_imt_rec">e93694ab0f279b8062b6e64be1050e59</sys_package>
         <sys_policy/>
@@ -214,22 +217,18 @@ button {
         <sys_scope display_value="IMT Recognition">e93694ab0f279b8062b6e64be1050e59</sys_scope>
         <sys_update_name>sp_widget_180b707f0fef9b8062b6e64be1050e2e</sys_update_name>
         <sys_updated_by>isabellee</sys_updated_by>
-        <sys_updated_on>2019-01-28 23:27:30</sys_updated_on>
+        <sys_updated_on>2019-04-23 19:02:17</sys_updated_on>
         <template><![CDATA[<div>
     <form name='giveRec' ng-submit="c.submitForm(giveRec.$valid)" ng-show="c.completed" novalidate>
         <label for='user' class="required">Select Employee</label>
-        <sn-record-picker id="user" name="user" field="user" table="'sys_user'" display-field="'name'" value-field="'sys_id'" search-fields="'name'" page-size="100" default-query="'sys_id!=' + c.data.recognizerId + '^active=true^u_employee=true^u_lob=Corporate - IT'" required>
+        <sn-record-picker id="user" name="user" field="user" table="'sys_user'" display-field="'name'" value-field="'sys_id'" search-fields="'name'" page-size="100" default-query="'sys_id!=' + c.data.recognizerId + '^active=true^u_lob=Corporate - IT'" required>
         </sn-record-picker>
         <label for='department'>Nominee's Department</label>
         <input id='department' name='department' type='text' ng-model='c.data.department' disabled><br>
         <label for='manager'>Nominee's Manager</label>
         <input id='manager' name='manager' type='text' ng-model='c.data.manager' disabled><br>
-        <label for='key_result' class='required'>Key Result</label>
-        <select id='key_result' ng-options='item.name for item in c.data.keyResults track by item.value' ng-model='c.data.keyResult' required></select>
-        <label for='recognition' class='required'>Shout Out</label>
+        <label for='recognition' class='required'>Shout Out (Include specific details about what the team member did)</label>
         <textarea id='recognition' rows='4' ng-model='c.data.Recognition' required></textarea><br>
-      	<input id='nominate' name='nominate' type='checkbox' ng-model='c.data.nominate'>
-      	<label id='nominate2' for='nominate'>Nominate for Shout Out of the Quarter Award</label><br>
         <button type='submit' class='btn btn-danger pull-right' ng-disabled="giveRec.$invalid || c.submitted">Submit</button>
     </form>
 </div>]]></template>

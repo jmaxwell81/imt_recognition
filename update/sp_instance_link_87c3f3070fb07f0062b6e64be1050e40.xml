@@ -9,34 +9,38 @@
         <kb_article/>
         <kb_category/>
         <kb_topic/>
-        <order>1</order>
+        <order>2</order>
         <roles/>
         <sc_cat_item/>
         <sc_category/>
-        <short_description>'Treat' a team to fresh baked goods for a recent team win</short_description>
+        <short_description>For a recent win involving 3+ team members</short_description>
         <size>md</size>
-        <sp_column display_value="2">71f3093b138b63401c7851522244b0c4</sp_column>
+        <sp_column display_value="3">c445e2030fbc3f0062b6e64be1050e4a</sp_column>
         <sp_page display_value="rec_give_team">581a693b0f83a34062b6e64be1050e18</sp_page>
-        <sp_widget display_value="Icon Link">3caa67afcb13020000f8d856634c9c2e</sp_widget>
+        <sp_widget display_value="Recognition Give Icon Link">27a15ecb0f3c3f0062b6e64be1050ec7</sp_widget>
         <sys_class_name>sp_instance_link</sys_class_name>
-        <sys_created_by>rbeeman</sys_created_by>
-        <sys_created_on>2019-01-23 18:25:29</sys_created_on>
+        <sys_created_by>isabellee</sys_created_by>
+        <sys_created_on>2019-04-18 23:01:20</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
-        <sys_id>2d858dbb138b63401c7851522244b0cd</sys_id>
-        <sys_mod_count>5</sys_mod_count>
+        <sys_id>87c3f3070fb07f0062b6e64be1050e40</sys_id>
+        <sys_mod_count>2</sys_mod_count>
         <sys_name>Shout Out a Team</sys_name>
         <sys_package display_value="IMT Recognition" source="x_thimi_imt_rec">e93694ab0f279b8062b6e64be1050e59</sys_package>
         <sys_policy/>
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="IMT Recognition">e93694ab0f279b8062b6e64be1050e59</sys_scope>
-        <sys_update_name>sp_instance_link_2d858dbb138b63401c7851522244b0cd</sys_update_name>
-        <sys_updated_by>rbeeman</sys_updated_by>
-        <sys_updated_on>2019-01-23 21:08:43</sys_updated_on>
+        <sys_update_name>sp_instance_link_87c3f3070fb07f0062b6e64be1050e40</sys_update_name>
+        <sys_updated_by>isabellee</sys_updated_by>
+        <sys_updated_on>2019-04-23 18:49:06</sys_updated_on>
         <title>Shout Out a Team</title>
         <type>page</type>
         <url/>
         <widget_parameters><![CDATA[{
 	"link_template": {
+		"value": "Top Icon",
+		"displayValue": "Top Icon"
+	},
+	"information": {
 		"value": "",
 		"displayValue": ""
 	}

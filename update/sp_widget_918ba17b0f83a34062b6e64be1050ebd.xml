@@ -6,6 +6,8 @@
 	var c = this;
 	c.data.user = {};
 	c.submitted = false;
+	c.teamCount = 0;
+	c.teamMin = 3;
 
 	$scope.user = {
 		displayValue: c.data.user.name,
@@ -16,21 +18,33 @@
 	$scope.$on("field.change", function(event, data) {
 		if (data.field.name == 'user') {
 			c.data.userId = data.newValue;
+			c.teamCount = data.newValue.split(',').length;
 		}
 	});	
-	
+
+
+	c.updateToolTip = function(invalid) {
+		if (c.teamCount < c.teamMin) {
+			return 'Please select at least ' + c.teamMin + ' team members';
+		} else if (invalid) {
+			return 'Please complete all required fields';	
+		} else {
+			return undefined;
+		}
+	};
+
 	c.submitForm = function() {
-			c.submitted = true;
-			c.server.get({
-				action: 'submitForm',
-				userId: c.data.userId,
-				treat: c.treat.value,
-				recognition: c.data.Recognition
-			}).then(function(r) {
-				$timeout(function() {
-					$window.location.href="?id=rec_list";
-				}, 2500, false);
-			});	
+		c.submitted = true;
+		c.server.get({
+			action: 'submitForm',
+			userId: c.data.userId,
+			treat: c.treat.value,
+			recognition: c.data.Recognition
+		}).then(function(r) {
+			$timeout(function() {
+				$window.location.href="?id=rec_list";
+			}, 2500, false);
+		});	
 	} 
 } 
 
@@ -134,7 +148,7 @@ button {&#13;
 
 		var	empPart = new GlideRecord('x_thimi_imt_rec_imt_recognition');
 		empPart.newRecord();
-		empPart.sub_type = 'Team Participation';
+		empPart.sub_type = 'Team Recognition';
 		empPart.treat = input.treat;
 		empPart.employee = userId;
 		var userRec = new GlideRecord('sys_user');
@@ -149,7 +163,7 @@ button {&#13;
 	function createNomineeRecord(userId, nomRec) {
 		empRec = new GlideRecord('x_thimi_imt_rec_imt_recognition');
 		empRec.newRecord();
-		empRec.sub_type = 'Team Recognition';
+		empRec.sub_type = 'Team Member Recognition';
 		empRec.nominator = gs.getUserID();
 		empRec.employee = userId;
 		var userRec = new GlideRecord('sys_user');
@@ -170,26 +184,28 @@ button {&#13;
         <sys_created_on>2019-01-23 21:11:30</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>918ba17b0f83a34062b6e64be1050ebd</sys_id>
-        <sys_mod_count>126</sys_mod_count>
+        <sys_mod_count>132</sys_mod_count>
         <sys_name>Recognition Team Form</sys_name>
         <sys_package display_value="IMT Recognition" source="x_thimi_imt_rec">e93694ab0f279b8062b6e64be1050e59</sys_package>
         <sys_policy/>
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="IMT Recognition">e93694ab0f279b8062b6e64be1050e59</sys_scope>
         <sys_update_name>sp_widget_918ba17b0f83a34062b6e64be1050ebd</sys_update_name>
-        <sys_updated_by>rbeeman</sys_updated_by>
-        <sys_updated_on>2019-01-29 17:50:09</sys_updated_on>
+        <sys_updated_by>isabellee</sys_updated_by>
+        <sys_updated_on>2019-04-18 23:06:38</sys_updated_on>
         <template><![CDATA[<div>
-    <form name='giveRec' ng-submit="c.submitForm()" novalidate>
-        <label for='user' class="required">Select Employees</label>
-        <sn-record-picker id="user" name="user" field="user" table="'sys_user'" display-field="'name'" value-field="'sys_id'" search-fields="'name'" multiple='true' page-size="100" default-query="'sys_id!=' + c.data.recognizerId + '^active=true^u_employee=true^u_lob=Corporate - IT'" required>
-        </sn-record-picker>    
-        <label for='treat' class='required'>Treat the Team</label>
-        <select id='treat' ng-options='item.name for item in c.data.treat track by item.value' ng-model='c.treat' required></select>       
-        <label for='recognition' class='required'>Reason for Shout Out</label>
-        <textarea id='recognition' rows='4' ng-model='c.data.Recognition' required></textarea><br>      
-        <button type='submit' class='btn btn-danger pull-right' ng-disabled="giveRec.$invalid || c.submitted">Submit</button>
-    </form>
+  <form name='giveRec' ng-submit="c.submitForm()" novalidate>
+    <label for='user' class="required">Select Members</label>
+    <sn-record-picker id="user" name="user" field="user" table="'sys_user'" display-field="'name'" value-field="'sys_id'" search-fields="'name'" multiple='true' page-size="100" default-query="'sys_id!=' + c.data.recognizerId + '^active=true^u_lob=Corporate - IT'" required>
+    </sn-record-picker>    
+    <label for='treat' class='required'>Treat the Team</label>
+    <select id='treat' ng-options='item.name for item in c.data.treat track by item.value' ng-model='c.treat' required></select>       
+    <label for='recognition' class='required'>Reason for Shout Out</label>
+    <textarea id='recognition' rows='4' ng-model='c.data.Recognition' required></textarea><br>      
+    <div class="tooltip-wrapper pull-right" uib-tooltip="{{ c.updateToolTip(giveRec.$invalid) }}">  
+      <button type='submit' class='btn btn-danger pull-right' ng-disabled="giveRec.$invalid || c.submitted || c.teamCount < c.teamMin">Submit</button>
+    </div>
+  </form>
 </div>]]></template>
     </sp_widget>
 </record_update>

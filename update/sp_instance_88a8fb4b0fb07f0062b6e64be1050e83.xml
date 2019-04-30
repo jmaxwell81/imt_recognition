@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_instance">
+    <sp_instance action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <class_name/>
+        <color>default</color>
+        <css/>
+        <glyph/>
+        <id/>
+        <order>1</order>
+        <roles/>
+        <short_description/>
+        <size>md</size>
+        <sp_column display_value="2">583762be0ffcfb0062b6e64be1050e75</sp_column>
+        <sp_widget display_value="Recognition Legend Form">ffc6b70b0fb07f0062b6e64be1050e9e</sp_widget>
+        <sys_class_name>sp_instance</sys_class_name>
+        <sys_created_by>isabellee</sys_created_by>
+        <sys_created_on>2019-04-18 23:22:26</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>88a8fb4b0fb07f0062b6e64be1050e83</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="IMT Recognition" source="x_thimi_imt_rec">e93694ab0f279b8062b6e64be1050e59</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="IMT Recognition">e93694ab0f279b8062b6e64be1050e59</sys_scope>
+        <sys_update_name>sp_instance_88a8fb4b0fb07f0062b6e64be1050e83</sys_update_name>
+        <sys_updated_by>isabellee</sys_updated_by>
+        <sys_updated_on>2019-04-18 23:22:26</sys_updated_on>
+        <title/>
+        <url/>
+        <widget_parameters/>
+    </sp_instance>
+</record_update>

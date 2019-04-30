@@ -14,6 +14,7 @@
 <p class="text-primary"><span style="font-size: 20px;">10&nbsp;pts</span></p>
 <p><span style="font-size: 14px; font-weight: 200;"><em>Gratuity is not included in the voucher. If redeemed, vouchers will be given out at the end of each month.</em></span></p>]]></description>
         <entitlement_script/>
+        <flow_designer_flow/>
         <group/>
         <hide_sp>false</hide_sp>
         <icon/>

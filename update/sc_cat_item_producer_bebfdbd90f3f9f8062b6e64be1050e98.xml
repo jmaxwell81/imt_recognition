@@ -14,6 +14,7 @@
 <p class="text-primary"><span style="font-size: 20px;">20 pts</span></p>
 <p><span style="font-size: 14px; font-weight: 200;"><em>Pick one breakfast item and coffee of choice from the Specialties menu. Your manager will work with you to select the best day and time for breakfast service.</em></span></p>]]></description>
         <entitlement_script/>
+        <flow_designer_flow/>
         <group/>
         <hide_sp>false</hide_sp>
         <icon/>

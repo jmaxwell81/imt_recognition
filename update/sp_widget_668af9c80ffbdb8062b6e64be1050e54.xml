@@ -5,7 +5,7 @@
 
 	/* widget controller */
 	var c = this;
-
+	
 	c.sortType = 'date';
 	c.sortReverse = true;
 
@@ -85,6 +85,10 @@ input {
 .pagination&gt;li.active&gt;a {
   background: $brand-primary;
   border-color: $brand-primary;
+}
+
+.nav {
+	margin-top: 20px;
 }</css>
         <data_table>sp_instance</data_table>
         <demo_data/>
@@ -107,7 +111,8 @@ input {
 
 	var recs = new GlideRecord('x_thimi_imt_rec_imt_recognition');
 	//recs.addQuery('employee', gs.getUserID());
-	recs.addQuery('sub_type', 'CONTAINS', 'Recognition');
+	//recs.addQuery('sub_type', 'CONTAINS', 'Recognition')
+	//	.addOrCondition('sub_type', 'CONTAINS', 'Legendary');
 	recs.query();
 	while (recs.next()) {
 		var dateMS = new GlideDateTime(recs.sys_created_on).getNumericValue(),
@@ -119,9 +124,9 @@ input {
 			empDept: recs.employee.department.getDisplayValue(),
 			empId: recs.employee.sys_id.toString(),
 			type: recs.sub_type.toString(),
-			keyResult: recs.key_result.toString(),
+			//keyResult: recs.key_result.toString(),
 			nominator: recs.nominator.name.toString(),
-			recognition: recs.description.toString(),
+			recognition: recs.description.toString().replace(/\n/g, '<br>'),
 			date: date,
 			searchDate: date.toLocaleDateString()
 		};
@@ -139,15 +144,15 @@ input {
         <sys_created_on>2018-08-03 17:15:50</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>668af9c80ffbdb8062b6e64be1050e54</sys_id>
-        <sys_mod_count>196</sys_mod_count>
+        <sys_mod_count>236</sys_mod_count>
         <sys_name>Shout Outs List</sys_name>
         <sys_package display_value="IMT Recognition" source="x_thimi_imt_rec">e93694ab0f279b8062b6e64be1050e59</sys_package>
         <sys_policy/>
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="IMT Recognition">e93694ab0f279b8062b6e64be1050e59</sys_scope>
         <sys_update_name>sp_widget_668af9c80ffbdb8062b6e64be1050e54</sys_update_name>
-        <sys_updated_by>isabellee</sys_updated_by>
-        <sys_updated_on>2019-01-28 21:55:26</sys_updated_on>
+        <sys_updated_by>rbeeman</sys_updated_by>
+        <sys_updated_on>2019-04-26 22:21:42</sys_updated_on>
         <template><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <div>
@@ -157,37 +162,114 @@ input {
 
   <input id='search' name='search' type='text' ng-model='c.search' placeholder="Search" class='pull-right hidden-xs' autocomplete="off">
 
-  <table class="main-table" ng-init="pageSize = 5">
-    <tr>
-      <th class="medium-row hidden-xs main-table" ng-click="c.sort('empName')">Employee <span ng-show="c.sortType == 'empName' && c.sortReverse == true" class="fa fa-caret-down"></span><span ng-show="c.sortType == 'empName' && c.sortReverse == false" class="fa fa-caret-up"></span>
-      </th>
-      <th class="small-row hidden-xs main-table" ng-click="c.sort('type')">Submission Type <span ng-show="c.sortType == 'type' && c.sortReverse == true" class="fa fa-caret-down"></span><span ng-show="c.sortType == 'type' && c.sortReverse == false" class="fa fa-caret-up"></span>
-      </th>
-      <th class="small-row hidden-xs main-table" ng-click="c.sort('keyResult')">Key Result <span ng-show="c.sortType == 'keyResult' && c.sortReverse == true" class="fa fa-caret-down"></span><span ng-show="c.sortType == 'keyResult' && c.sortReverse == false" class="fa fa-caret-up"></span>
-      </th>
-      <th class="large-row hidden-xs main-table" ng-click="c.sort('recognition')">Recognition <span ng-show="c.sortType == 'recognition' && c.sortReverse == true" class="fa fa-caret-down"></span><span ng-show="c.sortType == 'recognition' && c.sortReverse == false" class="fa fa-caret-up"></span>
-      </th>
-      <th class="small-row hidden-xs main-table" ng-click="c.sort('date')">Date <span ng-show="c.sortType == 'date' && c.sortReverse == true" class="fa fa-caret-down"></span><span ng-show="c.sortType == 'date' && c.sortReverse == false" class="fa fa-caret-up"></span>
-      </th>
-    </tr>
-    <tr dir-paginate="rec in c.data.myRecs | orderBy:c.sortType:c.sortReverse | filter:c.search | itemsPerPage: pageSize">
-      <td class="medium-row main-table">
-        <table>
-          <tr>
-            <td><span class="hidden-xs"><sn-avatar class="avatar-small-medium" primary="rec.empId" /></span></td>
-            <td><span class="text-primary">{{ rec.empName }}</span><br><span class="hidden-xs">{{ rec.empDept }}</span></td>
-          </tr>
-        </table>
-        </td>
-      <td class="small-row hidden-xs main-table">{{ rec.type }}</td>
-      <td class="small-row hidden-xs main-table">{{ rec.keyResult }}</td>
-      <td class="large-row main-table">{{ rec.recognition }}<br><br><strong>- {{ rec.nominator }}</strong></td>
-      <td class="small-row hidden-xs main-table">{{ rec.date | date : "MMMM d, y" }}</td>
-    </tr>
-  </table>
-  <div class="text-center">
-    <dir-pagination-controls></dir-pagination-controls>  
+  <ul class="nav nav-tabs">
+    <li class="active"><a data-toggle="tab" href="#individual">Individual</a></li>
+    <li><a data-toggle="tab" href="#team">Team</a></li>
+    <li><a data-toggle="tab" href="#legendary">Legendary</a></li>
+  </ul>
+
+  <div class="tab-content">
+    
+<!--
+	# Individual Shout Outs Table #
+-->    
+    <div id="individual" class="tab-pane fade in active">
+      <table class="main-table" ng-init="pageSize = 5">
+        <tr>
+          <th class="medium-row hidden-xs main-table" ng-click="c.sort('empName')">Employee <span ng-show="c.sortType == 'empName' && c.sortReverse == true" class="fa fa-caret-down"></span><span ng-show="c.sortType == 'empName' && c.sortReverse == false" class="fa fa-caret-up"></span>
+          </th>
+          <!--<th class="small-row hidden-xs main-table" ng-click="c.sort('keyResult')">Key Result <span ng-show="c.sortType == 'keyResult' && c.sortReverse == true" class="fa fa-caret-down"></span><span ng-show="c.sortType == 'keyResult' && c.sortReverse == false" class="fa fa-caret-up"></span>
+          </th>-->
+          <th class="large-row hidden-xs main-table" ng-click="c.sort('recognition')">Recognition <span ng-show="c.sortType == 'recognition' && c.sortReverse == true" class="fa fa-caret-down"></span><span ng-show="c.sortType == 'recognition' && c.sortReverse == false" class="fa fa-caret-up"></span>
+          </th>
+          <th class="small-row hidden-xs main-table" ng-click="c.sort('date')">Date <span ng-show="c.sortType == 'date' && c.sortReverse == true" class="fa fa-caret-down"></span><span ng-show="c.sortType == 'date' && c.sortReverse == false" class="fa fa-caret-up"></span>
+          </th>
+        </tr>
+        <tr dir-paginate="rec in c.data.myRecs | orderBy:c.sortType:c.sortReverse | filter:{ type: 'Recognition' }:true | filter:c.search | itemsPerPage: pageSize" pagination-id="individual">
+          <td class="medium-row main-table">
+            <table>
+              <tr>
+                <td><span class="hidden-xs"><sn-avatar class="avatar-small-medium" primary="rec.empId" /></span></td>
+                <td><span class="text-primary">{{ rec.empName }}</span><br><span class="hidden-xs">{{ rec.empDept }}</span></td>
+              </tr>
+            </table>
+          </td>
+          <!-- <td class="small-row hidden-xs main-table">{{ rec.keyResult }}</td> -->
+          <!-- <td class="large-row main-table">{{ rec.recognition }}<br><br><strong>- {{ rec.nominator }}</strong></td> -->
+          <td class="large-row main-table" ng-bind-html="rec.recognition + '<br><br><strong>-' + rec.nominator + '</strong>'"></td>
+          <td class="small-row hidden-xs main-table">{{ rec.date | date : "MMMM d, y" }}</td>
+        </tr>
+      </table>
+      <div class="text-center">
+        <dir-pagination-controls pagination-id="individual"></dir-pagination-controls>
+      </div>
+    </div>
+    
+<!--
+	# Team Shout Outs Table #
+-->
+    <div id="team" class="tab-pane fade in">
+      <table class="main-table" ng-init="pageSize = 5">
+        <tr>
+          <th class="medium-row hidden-xs main-table" ng-click="c.sort('empName')">Shouter <span ng-show="c.sortType == 'empName' && c.sortReverse == true" class="fa fa-caret-down"></span><span ng-show="c.sortType == 'empName' && c.sortReverse == false" class="fa fa-caret-up"></span>
+          </th>
+          <th class="large-row hidden-xs main-table" ng-click="c.sort('recognition')">Team and Recognition <span ng-show="c.sortType == 'recognition' && c.sortReverse == true" class="fa fa-caret-down"></span><span ng-show="c.sortType == 'recognition' && c.sortReverse == false" class="fa fa-caret-up"></span>
+          </th>
+          <th class="small-row hidden-xs main-table" ng-click="c.sort('date')">Date <span ng-show="c.sortType == 'date' && c.sortReverse == true" class="fa fa-caret-down"></span><span ng-show="c.sortType == 'date' && c.sortReverse == false" class="fa fa-caret-up"></span>
+          </th>
+        </tr>
+        <tr dir-paginate="rec in c.data.myRecs | orderBy:c.sortType:c.sortReverse | filter:{ type: 'Team Recognition' }:true | filter:c.search | itemsPerPage: pageSize" pagination-id="team">
+          <td class="medium-row main-table">
+            <table>
+              <tr>
+                <td><span class="hidden-xs"><sn-avatar class="avatar-small-medium" primary="rec.empId" /></span></td>
+                <td><span class="text-primary">{{ rec.empName }}</span><br><span class="hidden-xs">{{ rec.empDept }}</span></td>
+              </tr>
+            </table>
+          </td>
+          <td class="large-row main-table" ng-bind-html="rec.recognition"></td>
+          <td class="small-row hidden-xs main-table">{{ rec.date | date : "MMMM d, y" }}</td>
+        </tr>        
+      </table>
+      <div class="text-center">
+        <dir-pagination-controls pagination-id="team"></dir-pagination-controls>
+      </div>
+    </div>
+    
+<!--
+	# Legendary Shout Outs Table #
+-->    
+    <div id="legendary" class="tab-pane fade in">
+      <table class="main-table" ng-init="pageSize = 5">
+        <tr>
+          <th class="medium-row hidden-xs main-table" ng-click="c.sort('empName')">Employee <span ng-show="c.sortType == 'empName' && c.sortReverse == true" class="fa fa-caret-down"></span><span ng-show="c.sortType == 'empName' && c.sortReverse == false" class="fa fa-caret-up"></span>
+          </th>
+          <!--<th class="small-row hidden-xs main-table" ng-click="c.sort('keyResult')">Key Result <span ng-show="c.sortType == 'keyResult' && c.sortReverse == true" class="fa fa-caret-down"></span><span ng-show="c.sortType == 'keyResult' && c.sortReverse == false" class="fa fa-caret-up"></span>
+          </th>--> 
+          <th class="large-row hidden-xs main-table" ng-click="c.sort('recognition')">Recognition <span ng-show="c.sortType == 'recognition' && c.sortReverse == true" class="fa fa-caret-down"></span><span ng-show="c.sortType == 'recognition' && c.sortReverse == false" class="fa fa-caret-up"></span>
+          </th>
+          <th class="small-row hidden-xs main-table" ng-click="c.sort('date')">Date <span ng-show="c.sortType == 'date' && c.sortReverse == true" class="fa fa-caret-down"></span><span ng-show="c.sortType == 'date' && c.sortReverse == false" class="fa fa-caret-up"></span>
+          </th>
+        </tr>
+        <tr dir-paginate="rec in c.data.myRecs | orderBy:c.sortType:c.sortReverse | filter:{ type: 'Legendary Recognition' }:true | filter:c.search | itemsPerPage: pageSize" pagination-id="legendary">
+          <td class="medium-row main-table">
+            <table>
+              <tr>
+                <td><span class="hidden-xs"><sn-avatar class="avatar-small-medium" primary="rec.empId" /></span></td>
+                <td><span class="text-primary">{{ rec.empName }}</span><br><span class="hidden-xs">{{ rec.empDept }}</span></td>
+              </tr>
+            </table>
+          </td>
+          <!--<td class="small-row hidden-xs main-table">{{ rec.keyResult }}</td>-->
+          <td class="large-row main-table" ng-bind-html="rec.recognition"></td>
+          <td class="small-row hidden-xs main-table">{{ rec.date | date : "MMMM d, y" }}</td>
+        </tr>
+      </table>
+      <div class="text-center">
+        <dir-pagination-controls pagination-id="legendary"></dir-pagination-controls>
+      </div>
   </div>
+    
 </div>]]></template>
     </sp_widget>
 </record_update>

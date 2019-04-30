@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function() {
+  /* widget controller */
+  var c = this;
+	
+	c.isEmp = c.data.isEmployee == true;
+	
+	c.getClass = function() {
+		if (c.isEmp) {
+			return {"col-md-4": true};
+		} else {
+			return {"col-md-6": true};
+		}		
+	};
+}]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.iconlink a label,h2 {
+  display: block;
+  font-size: 2.5rem;
+  font-weight: 300;
+  line-height: 1.1;
+  padding: 0;
+  margin: 0 0 10px 0;
+}
+
+/* TOP ICON ---------- */
+
+a.top_icon {
+  display: block;
+  padding: 20px;
+  text-align: center;
+}
+
+a.top_icon .fa {
+  display: block;
+  text-align: center;
+}
+
+.icon-link-background-primary {
+  background-color: $brand-primary;
+}
+
+.icon-link-background-info {
+  background-color: $brand-info;
+}
+
+.icon-link-background-success {
+  background-color: $brand-success;
+}
+
+.icon-link-background-warning {
+  background-color: $brand-warning;
+}
+
+.icon-link-background-danger {
+  background-color: $brand-danger;
+}
+
+.icon-link-background-default {
+  background-color: $brand-primary;
+}
+
+.text-primary {
+  color: $brand-primary;
+  
+  &amp;:hover {
+    color: darken($brand-primary, 20%);
+  }
+}
+
+.text-info {
+  color: $brand-info;
+  
+  &amp;:hover {
+    color: darken($brand-info, 20%);
+  }
+}
+
+.text-success {
+  color: $brand-success;
+  
+  &amp;:hover {
+    color: darken($brand-success, 20%);
+  }
+}
+
+.text-warning {
+  color: $brand-warning;
+  
+  &amp;:hover {
+    color: darken($brand-warning, 20%);
+  }
+}
+
+.text-danger {
+  color: $brand-danger;
+  
+  &amp;:hover {
+    color: darken($brand-danger, 20%);
+  }
+}
+
+.text-default {
+  color: $brand-primary;
+  
+  &amp;:hover {
+    color: darken($brand-primary, 20%);
+  }
+}</css>
+        <data_table>sp_instance_link</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list>type,url,sc_category,sc_cat_item,kb_topic,kb_article,kb_category,sp_page,title,short_description,color,class_name,glyph</field_list>
+        <has_preview>false</has_preview>
+        <id>rec_icon_link</id>
+        <internal>false</internal>
+        <link/>
+        <name>Recognition Icon Link</name>
+        <option_schema>[{"name":"link_template","section":"Presentation","label":"Template","type":"choice","choices":[{"label":"Top Icon","value":"Top Icon"},{"label":"Circle Icon","value":"Circle Icon"},{"label":"Color Box","value":"Color Box"}]}]</option_schema>
+        <public>true</public>
+        <roles/>
+        <script><![CDATA[(function(){
+	
+	var gr = $sp.getInstanceRecord();
+	data.href = $sp.getMenuHREF(gr);
+	data.target = options.target || "";
+	
+	var isEmp = new GlideRecord('sys_user');
+	isEmp.get(gs.getUserID());
+	data.isEmployee = isEmp.getValue("u_employee");
+	
+	
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>rbeeman</sys_created_by>
+        <sys_created_on>2019-04-17 22:42:56</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>bff5223e0ffcfb0062b6e64be1050e10</sys_id>
+        <sys_mod_count>15</sys_mod_count>
+        <sys_name>Recognition Icon Link</sys_name>
+        <sys_package display_value="IMT Recognition" source="x_thimi_imt_rec">e93694ab0f279b8062b6e64be1050e59</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="IMT Recognition">e93694ab0f279b8062b6e64be1050e59</sys_scope>
+        <sys_update_name>sp_widget_bff5223e0ffcfb0062b6e64be1050e10</sys_update_name>
+        <sys_updated_by>rbeeman</sys_updated_by>
+        <sys_updated_on>2019-04-17 23:43:31</sys_updated_on>
+        <template><![CDATA[<div class="iconlink">
+  <div class="row">
+
+    <!--// First Icon Link -->
+    <div ng-class="c.getClass()">
+      <a ng-href="?id=rec_shout_out" class="top_icon" target href="?id=rec_shout_out">
+        <div class="m-b fa fa-bullhorn fa-4x text-danger"></div>
+        <h2>Give a Shout Out</h2>
+        <span class="text-muted">{{::options.short_description}}</span>
+      </a>
+    </div>
+
+    <!--// Second Icon Link -->
+    <div ng-show="c.isEmp" class="col-md-4">
+      <a ng-href="?id=rec_redeem" class="top_icon" target href="?id=rec_redeem">
+        <div class="m-b fa fa-gift fa-4x text-danger"></div>
+        <h2>Redeem Points</h2>
+        <span class="text-muted">{{::options.short_description}}</span>
+      </a>
+    </div>
+
+    <!--// Third Icon Link -->
+    <div ng-class="c.getClass()">
+      <a ng-href="?id=rec_list" class="top_icon" target href="?id=rec_list">
+        <div class="m-b fa fa-heart-o fa-4x text-danger"></div>
+        <h2>Recent Shout Outs</h2>
+        <span class="text-muted">{{::options.short_description}}</span>
+      </a>
+    </div>
+
+  </div>
+</div>]]></template>
+    </sp_widget>
+</record_update>

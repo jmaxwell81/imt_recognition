@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sp_column">
     <sp_column action="INSERT_OR_UPDATE">
-        <class_name>wrapper</class_name>
+        <class_name/>
         <order>3</order>
         <size>4</size>
         <size_lg/>
         <size_sm/>
         <size_xs/>
-        <sp_row display_value="1">872ee0950f07ab0062b6e64be1050e2a</sp_row>
+        <sp_row display_value="1">cc45a28f0f7c3f0062b6e64be1050e09</sp_row>
         <sys_class_name>sp_column</sys_class_name>
         <sys_created_by>isabellee</sys_created_by>
-        <sys_created_on>2019-01-15 23:07:07</sys_created_on>
+        <sys_created_on>2019-04-18 17:18:10</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
-        <sys_id>c149f09d0f07ab0062b6e64be1050e88</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_id>c445e2030fbc3f0062b6e64be1050e4a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
         <sys_name>3</sys_name>
         <sys_package display_value="IMT Recognition" source="x_thimi_imt_rec">e93694ab0f279b8062b6e64be1050e59</sys_package>
         <sys_policy/>
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="IMT Recognition">e93694ab0f279b8062b6e64be1050e59</sys_scope>
-        <sys_update_name>sp_column_c149f09d0f07ab0062b6e64be1050e88</sys_update_name>
+        <sys_update_name>sp_column_c445e2030fbc3f0062b6e64be1050e4a</sys_update_name>
         <sys_updated_by>isabellee</sys_updated_by>
-        <sys_updated_on>2019-01-15 23:46:20</sys_updated_on>
+        <sys_updated_on>2019-04-18 17:18:10</sys_updated_on>
     </sp_column>
 </record_update>

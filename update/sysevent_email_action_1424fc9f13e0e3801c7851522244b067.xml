@@ -16,7 +16,9 @@
         <digest_from/>
         <digest_html/>
         <digest_reply_to/>
-        <digest_separator_html><![CDATA[<br><hr><br>]]></digest_separator_html>
+        <digest_separator_html><![CDATA[<p>&nbsp;</p>
+<hr />
+<p>&nbsp;</p>]]></digest_separator_html>
         <digest_separator_text><![CDATA[\n--------------------------------------------------------------------------------\n]]></digest_separator_text>
         <digest_subject/>
         <digest_template/>
@@ -44,7 +46,7 @@
 <p><strong>Nominator:</strong> ${nominator.name}</p>
 <p><strong>Message:</strong> ${description}</p>
 <p><strong>Key Result:</strong> ${key_result}</p>
-<p><strong>Nominator's Manager:</strong> ${nominator.manager.name}</p>
+<p><strong>Nominee's Manager:</strong>&nbsp;${employee.manager.name}</p>
 <p style="line-height: 16px;"><span style="font-size: 13px;">You've earned points! Redeem at the IMT Recognition Portal ${mail_script:IMT Recognition Redemption Link}.</span></p>]]></message_html>
         <message_list/>
         <message_text/>
@@ -67,7 +69,7 @@
         <sys_customer_update>false</sys_customer_update>
         <sys_domain>global</sys_domain>
         <sys_id>1424fc9f13e0e3801c7851522244b067</sys_id>
-        <sys_mod_count>12</sys_mod_count>
+        <sys_mod_count>15</sys_mod_count>
         <sys_name>I&amp;MT Recognition Received</sys_name>
         <sys_overrides/>
         <sys_package display_value="IMT Recognition" source="x_thimi_imt_rec">e93694ab0f279b8062b6e64be1050e59</sys_package>
@@ -76,7 +78,7 @@
         <sys_scope display_value="IMT Recognition">e93694ab0f279b8062b6e64be1050e59</sys_scope>
         <sys_update_name>sysevent_email_action_1424fc9f13e0e3801c7851522244b067</sys_update_name>
         <sys_updated_by>isabellee</sys_updated_by>
-        <sys_updated_on>2018-10-26 21:40:31</sys_updated_on>
+        <sys_updated_on>2019-04-08 21:00:30</sys_updated_on>
         <sys_version>2</sys_version>
         <template display_value="I&amp;MT Recognition Received Notification">b9f33c9f13e0e3801c7851522244b08c</template>
         <type>email</type>
